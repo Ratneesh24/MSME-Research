@@ -1,0 +1,20 @@
+id,opportunity,category,market_size,problem_severity,willingness_to_pay,competition,cac_difficulty,mvp_difficulty,scalability,potential_5_10yr,evidence_confidence
+O1,AI receivables & collections copilot (AR-OS) for B2B MSMEs,A,High,High,Medium,Low-Medium,Medium,Medium,High,High,High
+O2,AI copilot for CA firms (WhatsApp intake -> Tally posting -> GST/TDS reconciliation),A,Medium,Medium-High,High,Medium,Low,Medium,High,Medium-High,Medium
+O3,"AI B2B sales agent on WhatsApp/voice (lead response, qualification, quotes, follow-up)",A,High,High,High,Medium,Medium,Medium,High,High,Medium
+O4,"Vertical, cluster-focused procurement + embedded credit (one input category)",A (hard),Very high,High,High,High,Medium,High,Medium,High,High
+O5,Energy-as-a-service for MSME clusters (rooftop solar RESCO + monitoring + retrofits),B,High,High,Medium-High,Medium,Medium,High,Medium,High,Medium
+O6,CBAM & product-carbon-footprint compliance for MSME exporters and suppliers,A (niche),Low-Medium,Very high,Medium-High,Low,Low,Medium,Medium-High,Medium,Medium
+O7,Incentive & scheme claims-as-a-service (success fee),B,Medium,Medium,Medium,Medium,Medium,Low,Medium,Low-Medium,Low
+O8,AI bid desk for GeM and public tenders,B,Medium,Medium,Medium,Medium-High,Medium,Medium,High,Medium,Medium
+O9,Export launchpad for export-capable non-exporters (managed service + buyer data + finance),B,Medium,Medium-High,Medium,Medium,Medium-High,Medium,Low-Medium,Medium,Low
+O10,WhatsApp-native shop-floor digitisation for job shops (production tracking + clip-on machine sensors),B,Medium,Medium-High,Medium,Low-Medium,Medium-High,Medium-High,Medium,Medium,Low
+O11,Supplier-quality and traceability SaaS for auto/engineering tier-2/3,C,Low-Medium,Medium,Medium,Medium,Medium,Medium,Medium,Low-Medium,Low
+O12,Labour-code payroll & compliance managed service (10-200 employees),B,Medium-High,Medium,Medium,High,Medium,Medium,Medium,Medium,Medium
+O13,"Embedded MSME insurance distribution (fire, stock, marine, group health)",C,Medium,Low-Medium,Low,Medium,Medium-High,Medium,Medium,Medium,Low
+O14,AI digital storefront (website + Google profile + catalogue) for micro manufacturers,D,Low (real),Low,Low,Very high,High,Low,High,Low,Medium
+O15,Credit-readiness + lender marketplace (CMA/DPR automation on AA/GST data),B,Medium-High,High,High,High,Medium,Medium,High,Medium,Medium
+O16,Cluster skilled-worker staffing with ITI pipelines,C,Medium,High,Low-Medium,High,Medium,Medium,Low-Medium,Medium,Low
+O17,Micro-merchant bookkeeping/ledger app,D,Low (real),Low,Very low,Very high,High,Low,High,Low,High
+O18,Cross-border payments for MSME exporters,D,Medium,Medium,High,Very high,High,High,High,Low (for new entrant),High
+O19,Standalone MSME cybersecurity,D,Low (real),Medium,Low,Medium,High,Medium,Medium,Low,Low

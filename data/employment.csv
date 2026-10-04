@@ -1,0 +1,9 @@
+metric,value,ref,data_type,source_ids,notes
+Workers in unincorporated non-agri establishments (ASUSE 2025),128100000,2025,observed,S01,Added 74.52 lakh jobs (+6.18%) over ASUSE 2023-24. Excludes construction and incorporated firms.
+Workers per establishment (ASUSE 2025),1.62,2025,derived,S01,12.81 crore / 7.92 crore.
+"GVA per worker, Rs (ASUSE 2025)",156539,2025,observed,S01,+4.54% y/y. District range ~Rs 1.0 lakh (Murshidabad) to Rs 2.72 lakh (Rangareddy).
+"Emolument per hired worker, Rs/year (ASUSE 2025)",146550,2025,observed,S01;S02b,+3.88% y/y; Dehradun ~Rs 4.64 lakh vs ~Rs 80k in parts of Bihar/Jharkhand.
+Women-owned proprietary establishments (share),0.27,2025,observed,S01,Up from 26.2% in 2023-24.
+"MSME employment, NSS 73rd round",111000000,2015-16,observed,S11,"Manufacturing 3.60 cr, trade 3.87 cr, other services 3.63 cr."
+Udyam: employment reported by registrations made in FY2025-26,80400000,FY2025-26,observed,S07,"Self-declared at registration. FY25: 6.91 cr; FY24: 5.45 cr. Trading 2.98 cr, services 2.57 cr, mfg 2.50 cr."
+Udyam: cumulative employment claimed by all registrations,380000000,Jul-2026,observed,S08,"CONFLICT: ~3x ASUSE's 12.81 crore. Self-declared, cumulative, not de-duplicated, and includes construction/agri-allied units. Do NOT use as current employment."

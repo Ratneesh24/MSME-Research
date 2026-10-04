@@ -1,0 +1,22 @@
+state,district,asuse2025_establishments_lakh,asuse2025_workers_lakh,gva_per_worker_rs,udyam_urp,source_ids,note
+West Bengal,North 24 Parganas,16.59,21.3,,,S02;S02b,Rank 1 by establishments and workers (ASUSE 2025)
+West Bengal,South 24 Parganas,10.29,12.4,,,S02;S02b,Rank 2
+Gujarat,Surat,8.51,,,588856,S02b;S66,Top-10; textiles and diamonds
+Gujarat,Ahmedabad,7.3,,,603761,S02b;S66,Top-10; Udyam URP leader in Gujarat (19.9% of state)
+Telangana,Rangareddy,6.93,,272000,,S02b,Top-10; among highest GVA/worker
+Uttar Pradesh,Prayagraj,6.32,,,,S02b,Top-10; only UP district in top-10
+Maharashtra,Pune,6.01,,228000,1100000,S02b;S66,Udyam URP ~15% of Maharashtra (derived ~11 lakh)
+Karnataka,Bengaluru Urban,5.0,,,,S02b,~5 lakh establishments
+West Bengal,Murshidabad,,,100443,,S02b,"Low GVA/worker: top-3 activities = 50%+ of units, 30% of GVA"
+Maharashtra,Mumbai Suburban,,,,,S02b,Among major districts; count not retrieved
+Maharashtra,Thane,,,,,S02b,Among major districts; count not retrieved
+Maharashtra,Pimpri-Chinchwad (Pune),,,,,S02b,Among highest GVA/worker
+Telangana,Hyderabad,,,,,S02b,Among highest GVA/worker; emoluments Rs 2.14 lakh/hired worker
+Delhi,Delhi,,,,,S02b,Among highest GVA/worker
+Rajasthan,Jaipur,,,,,S02b,Highest avg emoluments per hired worker among big districts (Rs 2.33 lakh)
+Uttarakhand,Dehradun,,,,,S02b,Emoluments ~Rs 4.64 lakh per hired worker
+Gujarat,Rajkot,,,,280662,S66,9.3% of Gujarat URP
+Gujarat,Vadodara,,,,223028,S66,7.4% of Gujarat URP
+Tamil Nadu,Chennai,,,,451575,S66,10.9% of TN URP
+Tamil Nadu,Coimbatore,,,,311048,S66,7.5% of TN URP
+Tamil Nadu,Tiruppur,,,,202160,S66,4.9% of TN URP

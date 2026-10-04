@@ -1,0 +1,176 @@
+"""Industrial / export / artisanal MSME clusters (qualitative).
+
+Cluster identities are well documented (MSE-CDP, ODOP, Export Promotion
+Councils, FMC mapping, state industrial policies). Unit counts per cluster
+were NOT retrieved and are left blank rather than guessed. 'opp' links each
+cluster to opportunity IDs in opportunities.py where it is a plausible
+first-customer pool. Export relevance: H/M/L is an analyst judgement based on
+the cluster's known export orientation.
+"""
+
+# state, district, cluster (town/area), sector, major products, type, export(H/M/L), opp
+CLUSTERS = [
+    # Tamil Nadu
+    ("Tamil Nadu", "Tiruppur", "Tiruppur", "Textiles", "Knitwear, hosiery, knit garments", "Export", "H", "O1;O4;O5;O9"),
+    ("Tamil Nadu", "Coimbatore", "Coimbatore", "Engineering", "Pumps, motors, wet grinders, castings, textile machinery parts", "Industrial", "M", "O1;O3;O5;O10"),
+    ("Tamil Nadu", "Chennai", "Ambattur / Guindy", "Engineering & auto components", "Auto parts, sheet metal, fabrication", "Industrial", "H", "O1;O10;O11"),
+    ("Tamil Nadu", "Kancheepuram", "Sriperumbudur / Oragadam", "Auto & electronics", "Auto components, electronics assembly", "Industrial", "H", "O1;O10;O11"),
+    ("Tamil Nadu", "Krishnagiri", "Hosur", "Auto components", "Two-wheeler and auto parts, precision engineering", "Industrial", "M", "O1;O10;O11"),
+    ("Tamil Nadu", "Karur", "Karur", "Textiles", "Home textiles, made-ups, bus body building", "Export", "H", "O1;O4;O9"),
+    ("Tamil Nadu", "Erode", "Erode", "Textiles & agro", "Powerloom fabrics, handloom, turmeric", "Industrial", "M", "O4;O9"),
+    ("Tamil Nadu", "Salem", "Salem", "Agro & metals", "Sago, steel products, textiles", "Industrial", "M", "O4;O5"),
+    ("Tamil Nadu", "Namakkal", "Namakkal", "Agro & transport", "Eggs/poultry, truck body building, transport services", "Industrial", "M", "O1;O15"),
+    ("Tamil Nadu", "Virudhunagar", "Sivakasi", "Printing & fireworks", "Fireworks, safety matches, offset printing", "Industrial", "L", "O8;O12"),
+    ("Tamil Nadu", "Vellore / Ranipet", "Ambur / Vaniyambadi / Ranipet", "Leather", "Finished leather, footwear, leather goods", "Export", "H", "O6;O9;O5"),
+    ("Tamil Nadu", "Madurai", "Madurai", "Rubber & textiles", "Rubber products, textiles", "Industrial", "M", "O3"),
+    ("Tamil Nadu", "Kancheepuram", "Kanchipuram", "Handloom", "Silk sarees", "Artisanal", "M", "O9"),
+    ("Tamil Nadu", "Dindigul", "Dindigul", "Hardware & leather", "Locks, leather tanning", "Industrial", "M", "O9"),
+    ("Tamil Nadu", "Thoothukudi", "Thoothukudi", "Salt & seafood", "Salt, seafood processing, port services", "Export", "M", "O9"),
+    ("Tamil Nadu", "Coimbatore", "Pollachi", "Agro", "Coir, coconut products", "Export", "H", "O9"),
+    ("Tamil Nadu", "Virudhunagar", "Rajapalayam", "Textiles", "Surgical cotton, textiles", "Industrial", "M", "O4"),
+    # Karnataka
+    ("Karnataka", "Bengaluru Urban", "Peenya", "Engineering", "Machine tools, precision components, electricals", "Industrial", "H", "O1;O3;O10;O11"),
+    ("Karnataka", "Bengaluru Urban", "Bengaluru garments", "Apparel", "Woven garments for export", "Export", "H", "O1;O9;O12"),
+    ("Karnataka", "Belagavi", "Belagavi", "Foundry & aerospace", "Castings, hydraulics, aerospace components", "Industrial", "M", "O5;O10"),
+    ("Karnataka", "Dharwad", "Hubballi-Dharwad", "Engineering & food", "Machine parts, food processing", "Industrial", "M", "O10"),
+    ("Karnataka", "Mysuru", "Mysuru", "Silk, agarbatti, auto", "Silk, incense sticks, auto parts", "Industrial", "M", "O9"),
+    ("Karnataka", "Ramanagara", "Channapatna", "Toys", "Lacquered wooden toys", "Artisanal", "M", "O9"),
+    ("Karnataka", "Dakshina Kannada / Udupi", "Mangaluru", "Cashew", "Cashew processing", "Export", "H", "O9"),
+    # Maharashtra
+    ("Maharashtra", "Pune", "Pimpri-Chinchwad / Bhosari / Chakan", "Auto components", "Auto & engineering components", "Industrial", "H", "O1;O3;O10;O11;O12"),
+    ("Maharashtra", "Thane", "Bhiwandi", "Textiles & warehousing", "Powerloom fabrics, warehousing", "Industrial", "M", "O4;O1"),
+    ("Maharashtra", "Mumbai Suburban", "Andheri / Goregaon / Kandivali", "Mixed", "Garments, gems & jewellery, plastics, pharma", "Export", "H", "O1;O3;O9"),
+    ("Maharashtra", "Chhatrapati Sambhajinagar", "Waluj / Shendra", "Auto & pharma", "Auto components, pharma", "Industrial", "H", "O1;O10;O11"),
+    ("Maharashtra", "Nashik", "Satpur / Ambad", "Engineering & agro", "Electricals, engineering, grapes/wine", "Industrial", "M", "O1;O10"),
+    ("Maharashtra", "Kolhapur", "Shiroli / Gokul Shirgaon", "Foundry", "Castings, engineering", "Industrial", "M", "O5;O6;O10"),
+    ("Maharashtra", "Kolhapur", "Ichalkaranji", "Textiles", "Powerloom fabrics", "Industrial", "M", "O4;O5"),
+    ("Maharashtra", "Solapur", "Solapur", "Textiles", "Terry towels, chaddars", "Export", "M", "O4;O9"),
+    ("Maharashtra", "Nashik", "Malegaon", "Textiles", "Powerloom grey fabric", "Industrial", "L", "O4"),
+    ("Maharashtra", "Nagpur", "Butibori / Hingna", "Engineering & food", "Engineering, food processing", "Industrial", "M", "O10"),
+    ("Maharashtra", "Sangli", "Sangli / Miraj", "Agro & foundry", "Turmeric, sugar, castings", "Industrial", "M", "O4;O5"),
+    ("Maharashtra", "Jalgaon", "Jalgaon", "Agro & plastics", "Banana, PVC pipes, dal mills", "Industrial", "M", "O4"),
+    ("Maharashtra", "Raigad", "Taloja / Patalganga / Mahad", "Chemicals", "Specialty and bulk chemicals", "Industrial", "H", "O6;O8"),
+    # Gujarat
+    ("Gujarat", "Ahmedabad", "Vatva / Naroda / Odhav / Sanand", "Chemicals, engineering, pharma", "Dyes, intermediates, engineering, pharma", "Industrial", "H", "O1;O3;O6;O8"),
+    ("Gujarat", "Surat", "Surat", "Textiles & diamonds", "Synthetic weaving, embroidery, zari, diamond cutting", "Export", "H", "O1;O4;O5"),
+    ("Gujarat", "Rajkot", "Rajkot", "Engineering", "Diesel engines, pumps, auto parts, castings, machine tools, jewellery", "Industrial", "H", "O1;O3;O5;O6;O10"),
+    ("Gujarat", "Morbi", "Morbi", "Ceramics", "Tiles, sanitaryware, wall clocks", "Export", "H", "O1;O5;O6;O9"),
+    ("Gujarat", "Jamnagar", "Jamnagar", "Brass parts", "Brass components, fittings", "Export", "H", "O1;O6;O9"),
+    ("Gujarat", "Vadodara", "Vadodara / Makarpura", "Engineering & chemicals", "Engineering, chemicals, pharma", "Industrial", "H", "O1;O10"),
+    ("Gujarat", "Bharuch", "Ankleshwar / Dahej / Jhagadia", "Chemicals", "Chemicals, agrochemicals", "Industrial", "H", "O6;O8"),
+    ("Gujarat", "Valsad", "Vapi", "Chemicals & paper", "Chemicals, pharma, paper", "Industrial", "H", "O6"),
+    ("Gujarat", "Bhavnagar", "Alang / Bhavnagar", "Ship-breaking & plastics", "Ship recycling, re-rolled steel, plastics, diamonds", "Industrial", "M", "O6"),
+    ("Gujarat", "Kutch", "Gandhidham / Anjar", "Steel, salt, timber", "Steel pipes, salt, timber", "Export", "H", "O6;O9"),
+    ("Gujarat", "Surendranagar", "Thangadh", "Ceramics", "Sanitaryware, insulators", "Industrial", "M", "O5"),
+    ("Gujarat", "Kutch", "Bhuj", "Handicrafts", "Ajrakh printing, embroidery", "Artisanal", "M", "O9"),
+    # Rajasthan
+    ("Rajasthan", "Jaipur", "Jaipur / Sanganer / Bagru / Sitapura", "Gems, handicrafts, textiles", "Jewellery, block printing, handicrafts, garments", "Export", "H", "O3;O9"),
+    ("Rajasthan", "Jodhpur", "Jodhpur", "Handicrafts & agro", "Wooden furniture, handicrafts, guar gum", "Export", "H", "O9"),
+    ("Rajasthan", "Bhilwara", "Bhilwara", "Textiles", "Synthetic yarn, suiting", "Industrial", "M", "O4;O5"),
+    ("Rajasthan", "Balotra / Pali", "Balotra / Pali", "Textile processing", "Dyeing and printing", "Industrial", "M", "O5"),
+    ("Rajasthan", "Ajmer", "Kishangarh", "Stone", "Marble processing", "Industrial", "M", "O5"),
+    ("Rajasthan", "Didwana-Kuchaman", "Makrana", "Stone", "Marble", "Industrial", "M", "O5"),
+    ("Rajasthan", "Udaipur / Rajsamand", "Udaipur", "Stone & minerals", "Marble, minerals", "Industrial", "M", "O5"),
+    ("Rajasthan", "Khairthal-Tijara (ex-Alwar)", "Bhiwadi / Neemrana", "Auto & engineering", "Auto parts, engineering", "Industrial", "M", "O1;O10;O11"),
+    # Uttar Pradesh
+    ("Uttar Pradesh", "Gautam Buddh Nagar", "Noida / Greater Noida", "Electronics & apparel", "Mobile/electronics, garments", "Export", "H", "O1;O3;O12"),
+    ("Uttar Pradesh", "Ghaziabad", "Sahibabad / Loni", "Engineering & steel products", "Engineering goods, steel products", "Industrial", "M", "O1;O6"),
+    ("Uttar Pradesh", "Kanpur Nagar", "Kanpur / Jajmau", "Leather & textiles", "Leather, saddlery, textiles, chemicals", "Export", "H", "O5;O9"),
+    ("Uttar Pradesh", "Agra", "Agra", "Footwear & foundry", "Footwear, castings", "Export", "H", "O5;O9"),
+    ("Uttar Pradesh", "Moradabad", "Moradabad", "Metal handicrafts", "Brassware, EPNS, metal handicrafts", "Export", "H", "O6;O9"),
+    ("Uttar Pradesh", "Firozabad", "Firozabad", "Glass", "Glassware, bangles", "Industrial", "M", "O5"),
+    ("Uttar Pradesh", "Bhadohi / Mirzapur", "Bhadohi", "Carpets", "Hand-knotted and tufted carpets", "Export", "H", "O9"),
+    ("Uttar Pradesh", "Varanasi", "Varanasi", "Silk & handicrafts", "Banarasi silk, handicrafts", "Artisanal", "M", "O9"),
+    ("Uttar Pradesh", "Aligarh", "Aligarh", "Hardware", "Locks, hardware, brass", "Industrial", "M", "O1;O9"),
+    ("Uttar Pradesh", "Meerut", "Meerut", "Sports goods", "Sports goods, scissors", "Export", "M", "O9"),
+    ("Uttar Pradesh", "Saharanpur", "Saharanpur", "Woodcraft", "Wood carving, furniture", "Artisanal", "M", "O9"),
+    ("Uttar Pradesh", "Lucknow", "Lucknow", "Embroidery", "Chikankari", "Artisanal", "M", "O9"),
+    ("Uttar Pradesh", "Kannauj", "Kannauj", "Perfumery", "Attar, essential oils", "Artisanal", "M", "O9"),
+    ("Uttar Pradesh", "Bulandshahr", "Khurja", "Ceramics", "Pottery, ceramic insulators", "Industrial", "L", "O5"),
+    ("Uttar Pradesh", "Prayagraj", "Prayagraj", "Trade & services", "Diversified trade/services (ASUSE top-10 district)", "Mixed", "L", "O15"),
+    ("Uttar Pradesh", "Gorakhpur", "GIDA / Gorakhpur", "Mixed", "Terracotta, food, plastics", "Industrial", "L", "O15"),
+    # Punjab
+    ("Punjab", "Ludhiana", "Ludhiana", "Hosiery, bicycles, hand tools", "Knitwear, bicycle & parts, hand tools, auto parts", "Export", "H", "O1;O3;O5;O6;O10"),
+    ("Punjab", "Jalandhar", "Jalandhar", "Sports goods & hand tools", "Sports goods, hand tools, leather", "Export", "H", "O1;O9"),
+    ("Punjab", "Gurdaspur", "Batala", "Machine tools & castings", "Machine tools, agricultural implements, castings", "Industrial", "M", "O5;O10"),
+    ("Punjab", "Fatehgarh Sahib", "Mandi Gobindgarh", "Steel", "Steel re-rolling, induction furnaces", "Industrial", "M", "O5;O6"),
+    ("Punjab", "Amritsar", "Amritsar", "Textiles & food", "Textiles, food processing", "Industrial", "M", "O4"),
+    # Haryana
+    ("Haryana", "Faridabad", "Faridabad", "Engineering", "Auto components, engineering, tractors parts", "Industrial", "M", "O1;O10;O11"),
+    ("Haryana", "Gurugram", "Manesar / Udyog Vihar", "Auto & apparel", "Auto components, apparel exports", "Export", "H", "O1;O9;O11;O12"),
+    ("Haryana", "Panipat", "Panipat", "Home textiles", "Home furnishings, recycled yarn, blankets", "Export", "H", "O1;O4;O9"),
+    ("Haryana", "Sonipat", "Kundli / Rai", "Engineering & food", "Engineering, food", "Industrial", "M", "O10"),
+    ("Haryana", "Yamunanagar", "Yamunanagar / Jagadhri", "Plywood & utensils", "Plywood, metal utensils", "Industrial", "M", "O4;O5"),
+    ("Haryana", "Jhajjar", "Bahadurgarh", "Footwear", "Non-leather footwear", "Industrial", "M", "O4"),
+    ("Haryana", "Ambala", "Ambala", "Scientific instruments", "Lab and scientific instruments", "Export", "M", "O8;O9"),
+    ("Haryana", "Rewari", "Dharuhera / Bawal", "Auto", "Auto components", "Industrial", "M", "O10;O11"),
+    # Delhi
+    ("Delhi", "Delhi", "Okhla / Bawana / Narela / Wazirpur", "Mixed", "Garments, engineering, steel pickling, electricals", "Industrial", "M", "O1;O3;O12"),
+    # West Bengal
+    ("West Bengal", "Howrah", "Howrah", "Foundry & light engineering", "Castings, light engineering", "Industrial", "M", "O5;O10"),
+    ("West Bengal", "Kolkata", "Bantala / Metiabruz", "Leather & garments", "Leather goods, readymade garments, jute products", "Export", "H", "O9"),
+    ("West Bengal", "North 24 Parganas", "Barrackpore belt", "Jute & light engineering", "Jute, light engineering, garments", "Industrial", "M", "O15"),
+    ("West Bengal", "South 24 Parganas", "South 24 Parganas", "Garments & fishery", "Tailoring units, fishery", "Mixed", "L", "O15"),
+    ("West Bengal", "Murshidabad", "Murshidabad", "Silk & bidi", "Silk, bidi rolling", "Artisanal", "L", "O15"),
+    ("West Bengal", "Paschim Bardhaman", "Durgapur / Asansol", "Steel & refractories", "Steel ancillaries, refractories", "Industrial", "M", "O5;O6"),
+    ("West Bengal", "Darjeeling / Jalpaiguri", "Siliguri / Dooars", "Tea", "Tea", "Export", "H", "O9"),
+    ("West Bengal", "Nadia", "Shantipur / Phulia", "Handloom", "Tant sarees", "Artisanal", "M", "O9"),
+    ("West Bengal", "Hooghly", "Hooghly", "Jute & engineering", "Jute, engineering", "Industrial", "M", "O5"),
+    # Telangana
+    ("Telangana", "Hyderabad / Rangareddy / Medchal / Sangareddy", "Jeedimetla / Patancheru / Pashamylaram", "Pharma & engineering", "Bulk drugs, formulations, engineering, electronics", "Export", "H", "O1;O6;O8;O10"),
+    ("Telangana", "Rajanna Sircilla", "Sircilla", "Textiles", "Powerloom", "Industrial", "L", "O4"),
+    ("Telangana", "Karimnagar", "Karimnagar", "Granite", "Granite", "Export", "M", "O9"),
+    ("Telangana", "Yadadri Bhuvanagiri", "Pochampally", "Handloom", "Ikat", "Artisanal", "M", "O9"),
+    ("Telangana", "Hanumakonda / Warangal", "Warangal", "Textiles & food", "Textiles (mega textile park), food", "Industrial", "M", "O4"),
+    # Andhra Pradesh
+    ("Andhra Pradesh", "Visakhapatnam / Anakapalli", "Visakhapatnam", "Pharma, steel, seafood", "Pharma (JNPC), steel ancillaries, seafood", "Export", "H", "O6;O9"),
+    ("Andhra Pradesh", "Guntur", "Guntur", "Agro", "Chilli, cotton, tobacco", "Export", "H", "O4;O9"),
+    ("Andhra Pradesh", "NTR / Krishna", "Vijayawada", "Auto body & food", "Auto body building, food processing", "Industrial", "M", "O10"),
+    ("Andhra Pradesh", "Nellore / Prakasam", "Nellore / Ongole", "Aquaculture & granite", "Shrimp, granite", "Export", "H", "O9"),
+    ("Andhra Pradesh", "Tirupati", "Sri City", "Electronics & manufacturing", "Electronics, multi-sector manufacturing", "Export", "H", "O1;O10"),
+    ("Andhra Pradesh", "Kakinada / East Godavari", "Kakinada", "Aquaculture", "Shrimp, coir", "Export", "H", "O9"),
+    ("Andhra Pradesh", "Bapatla / Guntur", "Chirala / Mangalagiri", "Handloom", "Handloom", "Artisanal", "L", "O9"),
+    # Kerala
+    ("Kerala", "Kollam", "Kollam", "Cashew", "Cashew processing", "Export", "H", "O9"),
+    ("Kerala", "Alappuzha", "Alappuzha", "Coir", "Coir products", "Export", "H", "O9"),
+    ("Kerala", "Ernakulam", "Kochi", "Seafood, spices, rubber", "Seafood, spices, rubber products", "Export", "H", "O9"),
+    ("Kerala", "Thrissur", "Thrissur", "Jewellery", "Gold jewellery", "Industrial", "M", "O3"),
+    ("Kerala", "Kannur", "Kannur", "Handloom", "Handloom home textiles", "Export", "M", "O9"),
+    # Madhya Pradesh
+    ("Madhya Pradesh", "Dhar / Indore", "Pithampur / Sanwer Road", "Auto & pharma", "Auto components, pharma, soya", "Industrial", "M", "O1;O10;O11"),
+    ("Madhya Pradesh", "Raisen / Bhopal", "Mandideep / Govindpura", "Engineering", "Engineering, food", "Industrial", "M", "O10"),
+    ("Madhya Pradesh", "Dewas", "Dewas", "Engineering & pharma", "Engineering, pharma", "Industrial", "M", "O10"),
+    ("Madhya Pradesh", "Gwalior / Bhind", "Malanpur / Gwalior", "Mixed", "Engineering, food", "Industrial", "L", "O10"),
+    ("Madhya Pradesh", "Ashoknagar / Khargone", "Chanderi / Maheshwar", "Handloom", "Handloom sarees", "Artisanal", "L", "O9"),
+    # Chhattisgarh
+    ("Chhattisgarh", "Raipur", "Urla / Siltara", "Steel", "Sponge iron, re-rolling, castings", "Industrial", "M", "O5;O6"),
+    ("Chhattisgarh", "Durg", "Bhilai", "Steel ancillaries", "Steel ancillaries, fabrication", "Industrial", "M", "O5;O6"),
+    # Jharkhand
+    ("Jharkhand", "East Singhbhum / Seraikela", "Jamshedpur / Adityapur", "Auto & steel ancillaries", "Auto components, steel fabrication", "Industrial", "M", "O1;O10;O11"),
+    ("Jharkhand", "Dhanbad", "Dhanbad", "Coal-linked", "Refractories, coal-based units", "Industrial", "L", "O5"),
+    ("Jharkhand", "Bokaro", "Bokaro", "Steel ancillaries", "Steel ancillaries", "Industrial", "L", "O5;O6"),
+    # Odisha
+    ("Odisha", "Khordha", "Bhubaneswar", "Engineering & food", "Engineering, food", "Industrial", "M", "O10"),
+    ("Odisha", "Sundargarh", "Rourkela / Kalunga", "Steel ancillaries", "Steel ancillaries", "Industrial", "M", "O5;O6"),
+    ("Odisha", "Angul", "Angul / Talcher", "Aluminium & steel downstream", "Aluminium extrusions, steel products", "Industrial", "M", "O6"),
+    ("Odisha", "Cuttack", "Cuttack", "Filigree & engineering", "Silver filigree, engineering", "Artisanal", "L", "O9"),
+    ("Odisha", "Sambalpur / Bargarh", "Sambalpur", "Handloom", "Ikat sarees", "Artisanal", "M", "O9"),
+    # Bihar
+    ("Bihar", "Bhagalpur", "Bhagalpur", "Silk", "Tussar silk", "Artisanal", "M", "O9"),
+    ("Bihar", "Muzaffarpur", "Muzaffarpur", "Agro & lac", "Litchi, lac bangles", "Artisanal", "L", "O9"),
+    ("Bihar", "Patna", "Patliputra / Fatuha", "Food & mixed", "Food processing, general manufacturing", "Industrial", "L", "O15"),
+    # North-East
+    ("Assam", "Kamrup Metro", "Guwahati", "Food & plastics", "Food, plastics", "Industrial", "L", "O15"),
+    ("Assam", "Dibrugarh / Tinsukia / Jorhat", "Upper Assam", "Tea", "Tea", "Export", "H", "O9"),
+    ("Assam", "Kamrup", "Sualkuchi", "Silk", "Muga and eri silk", "Artisanal", "M", "O9"),
+    # Himalayan states
+    ("Himachal Pradesh", "Solan", "Baddi-Barotiwala-Nalagarh", "Pharma & FMCG", "Formulations, FMCG", "Industrial", "H", "O1;O8"),
+    ("Uttarakhand", "Haridwar", "SIIDCUL Haridwar", "FMCG, pharma, auto", "FMCG, pharma, auto parts", "Industrial", "M", "O1;O10"),
+    ("Uttarakhand", "Udham Singh Nagar", "Rudrapur / Kashipur / Pantnagar", "Auto, paper, food", "Auto parts, paper, food", "Industrial", "M", "O10"),
+    ("Jammu & Kashmir", "Srinagar", "Srinagar", "Handicrafts", "Carpets, papier-mache, pashmina", "Export", "H", "O9"),
+    ("Jammu & Kashmir", "Jammu / Kathua", "Bari Brahmana / Kathua", "Mixed", "Food, basmati, light engineering", "Industrial", "M", "O15"),
+    # West coast UTs
+    ("Goa", "North / South Goa", "Verna / Kundaim", "Pharma", "Formulations", "Export", "H", "O8"),
+    ("Dadra & Nagar Haveli and Daman & Diu", "Dadra & Nagar Haveli / Daman", "Silvassa / Daman", "Plastics, textiles, engineering", "Plastics, yarn, engineering", "Industrial", "M", "O1;O4"),
+    ("Puducherry", "Puducherry", "Puducherry", "Mixed", "Light engineering, textiles", "Industrial", "L", "O10"),
+]
