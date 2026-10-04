@@ -123,6 +123,9 @@ tr.detail dt{color:var(--muted)} tr.detail dd{margin:0;color:var(--ink)}
 .idc{font-variant-numeric:tabular-nums;color:var(--muted);white-space:nowrap}
 
 /* assumptions */
+ol.files{margin:0;padding-left:1.4em;columns:2 280px;column-gap:32px;font-size:.95rem}
+ol.files li{break-inside:avoid;padding-block:2px}
+ol.files li::marker{color:var(--muted);font-variant-numeric:tabular-nums}
 ol.assume{margin:0;padding-left:1.3em;display:flex;flex-direction:column;gap:8px;max-width:80ch}
 ol.assume li::marker{color:var(--accent);font-weight:700}
 .two-theses{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px}
@@ -157,7 +160,7 @@ footer{font-size:var(--step--1);color:var(--muted);border-top:1px solid var(--ru
 
   <nav class="toc" aria-label="Sections">
     <a href="#funnel">Market funnel</a><a href="#opportunities">Opportunities</a><a href="#problems">Problems</a>
-    <a href="#structure">Turnover &amp; digital</a><a href="#states">States</a><a href="#clusters">Clusters</a><a href="#validate">Validate first</a>
+    <a href="#structure">Turnover &amp; digital</a><a href="#states">States</a><a href="#clusters">Clusters</a><a href="#validate">Validate first</a><a href="#files">Full report</a>
   </nav>
 
   <p class="caveat"><strong>Read with care.</strong> Figures were compiled from search extracts of the cited pages, because the research environment blocked direct downloads from government portals. Verify against the primary source before external use. Estimates are labelled. No interview data exists yet, so willingness to pay is inferred from what MSMEs already spend.</p>
@@ -262,6 +265,31 @@ footer{font-size:var(--step--1);color:var(--muted);border-top:1px solid var(--ru
       <li><strong>CBAM pull persists.</strong> EU importers keep demanding verified supplier emissions data.</li>
     </ol>
     <p class="ink2"><strong>Kill rule:</strong> stop an opportunity if fewer than 3 of 20 target firms pay after seeing results, or if CAC exceeds 12 months of gross profit.</p>
+  </section>
+
+  <section id="files">
+    <div class="sec-head"><span class="eyebrow">Full study</span><h2>Report chapters and datasets</h2>
+      <p class="ink2">The complete written study travels with this page. Each chapter opens as Markdown. Datasets are CSV files under <code>data/</code>, and the interview kit is under <code>instruments/</code>.</p></div>
+    <ol class="files">
+      <li><a href="report/00_executive_summary.md" target="_blank" rel="noopener">Executive summary: Indian MSME problems that can support a startup</a></li>
+      <li><a href="report/01_msme_universe.md" target="_blank" rel="noopener">1. The Indian MSME universe: how many exist, and how many are really active</a></li>
+      <li><a href="report/02_geography.md" target="_blank" rel="noopener">2. Where the MSMEs are: state, district and cluster analysis</a></li>
+      <li><a href="report/03_turnover_employment.md" target="_blank" rel="noopener">3. Turnover distribution, ability to pay, and employment</a></li>
+      <li><a href="report/04_problem_areas.md" target="_blank" rel="noopener">4. Problem areas: evidence, size and commercial solvability</a></li>
+      <li><a href="report/05_problem_database_and_scoring.md" target="_blank" rel="noopener">5. Problem database (42 problems) and scoring model</a></li>
+      <li><a href="report/06_market_sizing.md" target="_blank" rel="noopener">6. TAM / SAM / SOM for every serious opportunity</a></li>
+      <li><a href="report/07_competitors_white_space.md" target="_blank" rel="noopener">7. Competitors, global analogs, white space and India-specific dynamics</a></li>
+      <li><a href="report/08_business_models_gtm.md" target="_blank" rel="noopener">8. Business models, unit economics and customer acquisition</a></li>
+      <li><a href="report/09_trends_2026_2035.md" target="_blank" rel="noopener">9. Structural trends 2026–2035: which problems grow and which disappear</a></li>
+      <li><a href="report/10_opportunities.md" target="_blank" rel="noopener">10. Startup opportunity shortlist and final opportunity matrix</a></li>
+      <li><a href="report/11_top5_deep_dives.md" target="_blank" rel="noopener">11. Deep dives: the five strongest evidence-backed opportunities</a></li>
+      <li><a href="report/12_agrikhet.md" target="_blank" rel="noopener">12. "Could AgriKhet build this?"</a></li>
+      <li><a href="report/13_validation_plan.md" target="_blank" rel="noopener">13. Primary research design and 30-day validation plan</a></li>
+      <li><a href="report/14_should_we_build.md" target="_blank" rel="noopener">14. "Should We Build This?"</a></li>
+      <li><a href="report/15_sources.md" target="_blank" rel="noopener">15. Sources and data-quality log</a></li>
+      <li><a href="report/16_contact_database.md" target="_blank" rel="noopener">16. Contact database: what was built, what was not, and how to build the rest legally</a></li>
+    </ol>
+    <p class="ink2" style="font-size:var(--step--1)">Key datasets: <a href="data/problem_scores.csv" target="_blank" rel="noopener">problem_scores.csv</a> · <a href="data/opportunities.csv" target="_blank" rel="noopener">opportunities.csv</a> · <a href="data/tam_sam_som.csv" target="_blank" rel="noopener">tam_sam_som.csv</a> · <a href="data/state_msme.csv" target="_blank" rel="noopener">state_msme.csv</a> · <a href="data/clusters.csv" target="_blank" rel="noopener">clusters.csv</a> · <a href="data/competitors.csv" target="_blank" rel="noopener">competitors.csv</a> · <a href="data/channel_partners_public.csv" target="_blank" rel="noopener">channel_partners_public.csv</a> · <a href="data/sources.csv" target="_blank" rel="noopener">sources.csv</a> · <a href="instruments/interview_guide.md" target="_blank" rel="noopener">interview guide</a></p>
   </section>
 
   <footer>
