@@ -24,7 +24,7 @@ A data-backed study of which problems faced by Indian MSMEs are **large, frequen
 | [`data/`](data) | 25 CSV datasets + `summary.json` (dashboard feed) |
 | [`instruments/`](instruments) | Interview guide, survey, qualification scorecard, response-coding template |
 | [`scripts/`](scripts) | `build_datasets.py` (all CSVs from `msme_data/`), `render_report_tables.py` (data-driven chapters), `build_contact_lists.py` (public prospect-list pipeline) |
-| [`dashboard/index.html`](dashboard/index.html) | Interactive dashboard (also published as a private Artifact) |
+| [`dashboard/index.html`](dashboard/index.html) | Interactive dashboard built from `data/summary.json` (`dashboard/build_dashboard.py`); published privately at https://claude.ai/artifact/4dPRuw4gLY9dGbLohFErhc |
 
 ### Report chapters
 
@@ -57,6 +57,7 @@ A data-backed study of which problems faced by Indian MSMEs are **large, frequen
 ```bash
 python3 scripts/build_datasets.py        # regenerates data/*.csv and data/summary.json (stdlib only)
 python3 scripts/render_report_tables.py  # regenerates chapters 05, 06, 10 from the CSVs
+python3 dashboard/build_dashboard.py     # rebuilds dashboard/index.html from data/summary.json
 ```
 Edit numbers only in `scripts/msme_data/*.py`, then rebuild. Report, CSVs and dashboard stay consistent.
 

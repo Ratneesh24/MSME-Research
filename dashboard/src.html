@@ -1,0 +1,541 @@
+<title>India MSME Opportunity Atlas</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Anek+Latin:wdth,wght@75..100,500..800&family=Mukta:wght@400;500;600;700&display=swap">
+<style>
+/* Layout: one ruled "ledger" column (max 1160px). Each section is a sheet with a heading rule; tables lead, charts are figures beside them. */
+:root{
+  --paper:#f5f6f9; --surface:#fcfcfb; --ink:#141620; --ink-2:#474c5c; --muted:#757b8c;
+  --rule:#e1e3ea; --rule-strong:#c6c9d3; --accent:#a3262a; --accent-wash:rgba(163,38,42,.08);
+  --series:#2a78d6; --series-wash:rgba(42,120,214,.12);
+  --cat-a:#0d366b; --cat-b:#256abf; --cat-c:#3987e5; --cat-d:#86b6ef;
+  --chip-ink-a:#ffffff; --chip-ink-b:#ffffff; --chip-ink-c:#ffffff; --chip-ink-d:#0d1a33;
+  --tip-bg:#141620; --tip-ink:#f5f6f9;
+  --font-display:"Anek Latin","Mukta",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --font-body:"Mukta",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --step--1:.8125rem; --step-0:1rem; --step-1:1.1875rem; --step-2:1.5rem; --step-3:2.125rem; --step-4:3.25rem;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --paper:#111217; --surface:#1a1b20; --ink:#f1f2f6; --ink-2:#c3c6d0; --muted:#8c91a1;
+    --rule:#2b2d35; --rule-strong:#3a3d47; --accent:#e46e72; --accent-wash:rgba(228,110,114,.12);
+    --series:#3987e5; --series-wash:rgba(57,135,229,.16);
+    --cat-a:#9ec5f4; --cat-b:#5598e7; --cat-c:#256abf; --cat-d:#184f95;
+    --chip-ink-a:#0d1a33; --chip-ink-b:#0d1a33; --chip-ink-c:#ffffff; --chip-ink-d:#ffffff;
+    --tip-bg:#f1f2f6; --tip-ink:#141620; color-scheme:dark;
+  }
+}
+:root[data-theme="dark"]{
+  --paper:#111217; --surface:#1a1b20; --ink:#f1f2f6; --ink-2:#c3c6d0; --muted:#8c91a1;
+  --rule:#2b2d35; --rule-strong:#3a3d47; --accent:#e46e72; --accent-wash:rgba(228,110,114,.12);
+  --series:#3987e5; --series-wash:rgba(57,135,229,.16);
+  --cat-a:#9ec5f4; --cat-b:#5598e7; --cat-c:#256abf; --cat-d:#184f95;
+  --chip-ink-a:#0d1a33; --chip-ink-b:#0d1a33; --chip-ink-c:#ffffff; --chip-ink-d:#ffffff;
+  --tip-bg:#f1f2f6; --tip-ink:#141620; color-scheme:dark;
+}
+*{box-sizing:border-box}
+body{background:var(--paper);color:var(--ink);font-family:var(--font-body);font-size:var(--step-0);line-height:1.55;padding-inline:16px;padding-block:0 48px}
+.wrap{max-width:1160px;margin-inline:auto;display:flex;flex-direction:column;gap:56px}
+h1,h2,h3{font-family:var(--font-display);text-wrap:balance;margin:0;font-stretch:88%}
+h1{font-size:var(--step-4);line-height:1.02;font-weight:750;letter-spacing:-.01em}
+h2{font-size:var(--step-3);line-height:1.1;font-weight:700}
+h3{font-size:var(--step-1);font-weight:650;font-stretch:95%}
+p{margin:0;max-width:68ch}
+a{color:var(--accent)}
+:focus-visible{outline:2px solid var(--accent);outline-offset:2px;border-radius:3px}
+.eyebrow{font-size:var(--step--1);letter-spacing:.08em;text-transform:uppercase;color:var(--muted);font-weight:600}
+.muted{color:var(--muted)} .ink2{color:var(--ink-2)}
+.num{font-variant-numeric:tabular-nums}
+
+/* masthead */
+header.mast{padding-block:40px 0;display:grid;grid-template-columns:minmax(0,1.5fr) minmax(0,1fr);gap:32px;align-items:end;border-bottom:3px double var(--rule-strong);padding-bottom:28px}
+header.mast .lede{font-size:var(--step-1);color:var(--ink-2);margin-top:14px}
+.units{font-size:var(--step--1);color:var(--muted);margin-top:10px}
+.hero{display:flex;flex-direction:column;gap:6px;padding:20px 22px;border-left:3px solid var(--accent);background:var(--accent-wash)}
+.hero .fig{font-family:var(--font-body);font-size:3.5rem;font-weight:700;line-height:1;letter-spacing:-.01em}
+.hero .cap{color:var(--ink-2);font-size:var(--step--1);max-width:42ch}
+nav.toc{display:flex;flex-wrap:wrap;gap:6px 18px;font-size:var(--step--1);margin-top:-36px}
+nav.toc a{color:var(--ink-2);text-decoration:none;border-bottom:1px solid var(--rule-strong);padding-bottom:1px}
+nav.toc a:hover{color:var(--accent);border-color:var(--accent)}
+.caveat{font-size:var(--step--1);color:var(--ink-2);border:1px solid var(--rule);padding:10px 14px;border-radius:4px;background:var(--surface);max-width:none}
+
+/* sections */
+section{display:flex;flex-direction:column;gap:18px;scroll-margin-top:16px}
+.sec-head{display:flex;flex-direction:column;gap:6px;border-top:1px solid var(--ink);padding-top:14px}
+.sec-head .eyebrow{color:var(--accent)}
+.grid2{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:28px}
+figure{margin:0;display:flex;flex-direction:column;gap:10px;min-width:0}
+figcaption{display:flex;flex-direction:column;gap:2px}
+figcaption .t{font-weight:600}
+figcaption .s{font-size:var(--step--1);color:var(--muted)}
+.chart{background:var(--surface);border:1px solid var(--rule);border-radius:4px;padding:14px 12px 10px;overflow-x:auto}
+.chart svg{display:block;max-width:none;overflow:visible}
+svg text{font-family:var(--font-body);fill:var(--ink-2);font-size:12px}
+svg .lbl{fill:var(--ink);font-size:12.5px}
+svg .val{fill:var(--ink);font-weight:600;font-variant-numeric:tabular-nums}
+svg .tick{fill:var(--muted);font-size:11px;font-variant-numeric:tabular-nums}
+svg .grid{stroke:var(--rule);stroke-width:1}
+svg .base{stroke:var(--rule-strong);stroke-width:1}
+svg .bar{fill:var(--series)}
+svg .bar.est{fill:var(--series);fill-opacity:.55}
+svg .hit{fill:transparent;cursor:default}
+svg .hit:hover + .bar, svg g.row:hover .bar{filter:brightness(1.08)}
+svg .range{stroke:var(--series);stroke-width:2;stroke-linecap:round}
+svg .dot{fill:var(--series);stroke:var(--surface);stroke-width:2}
+svg .ref{stroke:var(--accent);stroke-width:1}
+svg .reftxt{fill:var(--accent);font-size:11px}
+details.tbl{font-size:var(--step--1)}
+details.tbl summary{cursor:pointer;color:var(--ink-2);width:max-content}
+.legend{display:flex;flex-wrap:wrap;gap:6px 16px;font-size:var(--step--1);color:var(--ink-2)}
+.legend i{display:inline-block;width:12px;height:12px;border-radius:2px;vertical-align:-1px;margin-right:6px}
+
+/* controls */
+.controls{display:flex;flex-wrap:wrap;gap:8px 10px;align-items:center}
+.chip{font:inherit;font-size:var(--step--1);border:1px solid var(--rule-strong);background:var(--surface);color:var(--ink-2);padding:4px 11px;border-radius:999px;cursor:pointer}
+.chip[aria-pressed="true"]{border-color:var(--accent);color:var(--ink);box-shadow:inset 0 0 0 1px var(--accent)}
+.chip:hover{border-color:var(--ink-2)}
+input[type="search"],select{font:inherit;font-size:var(--step--1);padding:5px 10px;border:1px solid var(--rule-strong);border-radius:4px;background:var(--surface);color:var(--ink);min-width:0}
+label.ctl{display:flex;flex-wrap:wrap;gap:6px;align-items:center;font-size:var(--step--1);color:var(--muted);max-width:100%;min-width:0}
+label.ctl select,label.ctl input{max-width:min(100%,24rem)}
+
+/* tables */
+.tablewrap{overflow-x:auto;border:1px solid var(--rule);border-radius:4px;background:var(--surface)}
+table{border-collapse:collapse;width:100%;font-size:.9rem}
+th,td{text-align:left;padding:9px 12px;border-bottom:1px solid var(--rule);vertical-align:top}
+th{font-size:var(--step--1);font-weight:600;color:var(--muted);letter-spacing:.02em;white-space:nowrap;background:var(--surface);position:sticky;top:0}
+th button{all:unset;cursor:pointer}
+th button:focus-visible{outline:2px solid var(--accent)}
+th[aria-sort] button::after{content:" ↕";color:var(--rule-strong)}
+th[aria-sort="descending"] button::after{content:" ↓";color:var(--accent)}
+th[aria-sort="ascending"] button::after{content:" ↑";color:var(--accent)}
+td.r,th.r{text-align:right}
+tr.main{cursor:pointer}
+tr.main:hover td{background:var(--series-wash)}
+tr.detail td{background:var(--paper);font-size:var(--step--1);color:var(--ink-2)}
+tr.detail dl{display:grid;grid-template-columns:minmax(120px,190px) minmax(0,1fr);gap:4px 16px;margin:4px 0}
+tr.detail dt{color:var(--muted)} tr.detail dd{margin:0;color:var(--ink)}
+.cat{display:inline-block;min-width:2.1em;text-align:center;font-weight:700;font-size:.78rem;padding:1px 7px;border-radius:3px}
+.cat.A{background:var(--cat-a);color:var(--chip-ink-a)} .cat.B{background:var(--cat-b);color:var(--chip-ink-b)}
+.cat.C{background:var(--cat-c);color:var(--chip-ink-c)} .cat.D{background:var(--cat-d);color:var(--chip-ink-d)}
+.conf{font-size:.75rem;font-weight:600;border:1px solid var(--rule-strong);border-radius:3px;padding:0 6px;color:var(--ink-2);white-space:nowrap}
+.conf.H{border-color:var(--ink-2);color:var(--ink)}
+.bar-cell{min-width:150px}
+.idc{font-variant-numeric:tabular-nums;color:var(--muted);white-space:nowrap}
+
+/* assumptions */
+ol.assume{margin:0;padding-left:1.3em;display:flex;flex-direction:column;gap:8px;max-width:80ch}
+ol.assume li::marker{color:var(--accent);font-weight:700}
+.two-theses{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px}
+.thesis{border-top:2px solid var(--series);padding-top:10px;display:flex;flex-direction:column;gap:6px}
+footer{font-size:var(--step--1);color:var(--muted);border-top:1px solid var(--rule);padding-top:14px;display:flex;flex-direction:column;gap:6px}
+
+#tip{position:fixed;z-index:10;pointer-events:none;background:var(--tip-bg);color:var(--tip-ink);font-size:.8rem;line-height:1.4;padding:7px 10px;border-radius:4px;max-width:300px;box-shadow:0 4px 14px rgba(0,0,0,.18)}
+
+@media (max-width:820px){
+  header.mast{grid-template-columns:minmax(0,1fr)}
+  .grid2,.two-theses{grid-template-columns:minmax(0,1fr)}
+  h1{font-size:2.4rem} .hero .fig{font-size:2.75rem}
+  nav.toc{margin-top:-24px}
+}
+@media (prefers-reduced-motion: reduce){*{transition:none!important;animation:none!important}}
+</style>
+
+<div class="wrap">
+  <header class="mast">
+    <div>
+      <div class="eyebrow">Research study · data to 4 October 2026 · prepared for AgriKhet Ecoharvest Solutions</div>
+      <h1>India MSME Opportunity Atlas</h1>
+      <p class="lede">Which problems faced by Indian MSMEs are large, frequent, painful and paid-for enough to build a company on? Explore 42 scored problems, 19 sized opportunities and 142 clusters. Every number traces to a source.</p>
+      <p class="units">Figures use Indian units: 1 lakh = 1,00,000 · 1 crore = 1,00,00,000 · ₹ cr = rupees crore.</p>
+    </div>
+    <div class="hero" aria-label="Headline figure">
+      <span class="eyebrow">Realistic B2B customer base</span>
+      <span class="fig">8–12 lakh</span>
+      <span class="cap">B2B manufacturers and distributors with ₹2–100 crore turnover, out of 9.16 crore Udyam registrations. That is about 1 in 90 registrations.</span>
+    </div>
+  </header>
+
+  <nav class="toc" aria-label="Sections">
+    <a href="#funnel">Market funnel</a><a href="#opportunities">Opportunities</a><a href="#problems">Problems</a>
+    <a href="#structure">Turnover &amp; digital</a><a href="#states">States</a><a href="#clusters">Clusters</a><a href="#validate">Validate first</a>
+  </nav>
+
+  <p class="caveat"><strong>Read with care.</strong> Figures were compiled from search extracts of the cited pages, because the research environment blocked direct downloads from government portals. Verify against the primary source before external use. Estimates are labelled. No interview data exists yet, so willingness to pay is inferred from what MSMEs already spend.</p>
+
+  <section id="funnel">
+    <div class="sec-head"><span class="eyebrow">Brief §1 · Active MSMEs</span><h2>From 9 crore registrations to a market that pays</h2>
+      <p class="ink2">Registrations are not businesses. Solid bars are observed counts; lighter bars are our estimates.</p></div>
+    <figure>
+      <figcaption><span class="t">MSME universe funnel</span><span class="s">Count of enterprises, linear scale. Hover a bar for source and method.</span></figcaption>
+      <div class="chart" id="ch-funnel"></div>
+      <div class="legend"><span><i style="background:var(--series)"></i>Observed or derived from official data</span><span><i style="background:var(--series);opacity:.55"></i>Estimate</span></div>
+      <details class="tbl"><summary>Show as table</summary><div class="tablewrap" id="tb-funnel"></div></details>
+    </figure>
+  </section>
+
+  <section id="opportunities">
+    <div class="sec-head"><span class="eyebrow">Brief §20, §27–28 · Opportunity matrix</span><h2>Nineteen startup opportunities, graded on evidence</h2>
+      <p class="ink2">Category A has strong evidence: a large or urgent problem, observed spending and identifiable customers. B needs willingness-to-pay validation. C has weak evidence. D: avoid for now. Click a row for the full case.</p></div>
+    <div class="controls" role="group" aria-label="Filter by category">
+      <button class="chip" data-cat="all" aria-pressed="true">All</button>
+      <button class="chip" data-cat="A" aria-pressed="false">A · strong evidence</button>
+      <button class="chip" data-cat="B" aria-pressed="false">B · validate WTP</button>
+      <button class="chip" data-cat="C" aria-pressed="false">C · weak</button>
+      <button class="chip" data-cat="D" aria-pressed="false">D · avoid</button>
+    </div>
+    <div class="tablewrap"><table id="tb-opps"><thead><tr>
+      <th>ID</th><th>Opportunity</th><th>Cat.</th><th class="bar-cell">Year-5 revenue (SOM, ₹ cr)</th><th class="r">TAM bottom-up</th><th class="r">TAM top-down</th><th>Evidence</th></tr></thead><tbody></tbody></table></div>
+    <p class="muted" style="font-size:var(--step--1)">SOM bar shows the low–high range of year-5 annual revenue on one scale for all rows. TAM is annual revenue to the startup in ₹ crore. Where the two TAM methods disagree by more than 2×, plan on the lower one.</p>
+  </section>
+
+  <section id="problems">
+    <div class="sec-head"><span class="eyebrow">Brief §18–19 · Problem database</span><h2>Forty-two MSME problems, scored on fourteen criteria</h2>
+      <p class="ink2">Weights favour willingness to pay (12%), existing spend (10%) and ease of acquisition (10%). Confidence H means official or large-sample data plus observed spend; L means mostly reasoned. Click a row for evidence.</p></div>
+    <div class="controls">
+      <label class="ctl" for="pb-search">Search <input type="search" id="pb-search" placeholder="e.g. payment, CBAM, energy"></label>
+      <label class="ctl" for="pb-cat">Area <select id="pb-cat"><option value="">All areas</option></select></label>
+      <label class="ctl" for="pb-conf">Confidence <select id="pb-conf"><option value="">Any</option><option value="H">H</option><option value="M">M</option><option value="L">L</option></select></label>
+    </div>
+    <div class="tablewrap"><table id="tb-probs"><thead><tr>
+      <th aria-sort="descending" data-k="rank"><button>Rank</button></th><th data-k="id"><button>ID</button></th><th data-k="problem"><button>Problem</button></th>
+      <th data-k="category"><button>Area</button></th><th class="bar-cell" data-k="weighted_score"><button>Weighted score (0–10)</button></th>
+      <th class="r" data-k="wtp"><button>WTP</button></th><th class="r" data-k="existing_spend"><button>Spend</button></th><th class="r" data-k="acquisition_ease"><button>CAC ease</button></th>
+      <th data-k="evidence_confidence"><button>Conf.</button></th></tr></thead><tbody></tbody></table></div>
+  </section>
+
+  <section id="structure">
+    <div class="sec-head"><span class="eyebrow">Brief §5, §9 · Who can pay</span><h2>Most establishments are tiny and offline</h2>
+      <p class="ink2">Both charts use a logarithmic axis, so the large and small groups stay legible. Each dot is the midpoint estimate and each line its range.</p></div>
+    <div class="grid2">
+      <figure>
+        <figcaption><span class="t">Estimated enterprises by annual turnover</span><span class="s">Log scale · ~8.0 crore non-farm establishments · confidence low below ₹1 cr</span></figcaption>
+        <div class="chart" id="ch-turnover"></div>
+        <details class="tbl"><summary>Show as table</summary><div class="tablewrap" id="tb-turnover"></div></details>
+      </figure>
+      <figure>
+        <figcaption><span class="t">Estimated enterprises by digital maturity</span><span class="s">Log scale · L0 offline → L5 AI-driven</span></figcaption>
+        <div class="chart" id="ch-digital"></div>
+        <details class="tbl"><summary>Show as table</summary><div class="tablewrap" id="tb-digital"></div></details>
+      </figure>
+    </div>
+  </section>
+
+  <section id="states">
+    <div class="sec-head"><span class="eyebrow">Brief §3 · States</span><h2>Registration density and formalisation by state</h2>
+      <p class="ink2">Only the 15 states with retrieved data are shown. † marks a combined figure from a secondary 2026 report; verify it.</p></div>
+    <div class="grid2">
+      <figure>
+        <figcaption><span class="t">Udyam registrations (URP + UAP) per lakh population</span><span class="s">2026 registrations ÷ 2026 projected population</span></figcaption>
+        <div class="chart" id="ch-density"></div>
+      </figure>
+      <figure>
+        <figcaption><span class="t">Formalisation ratio</span><span class="s">Udyam URP registrations ÷ survey estimate of informal establishments (ASUSE 2023-24 or NSS 2015-16). Directional only.</span></figcaption>
+        <div class="chart" id="ch-formal"></div>
+      </figure>
+    </div>
+    <details class="tbl"><summary>Show state table</summary><div class="tablewrap" id="tb-states"></div></details>
+  </section>
+
+  <section id="clusters">
+    <div class="sec-head"><span class="eyebrow">Brief §4, §24 · Where to find first customers</span><h2>Cluster finder</h2>
+      <p class="ink2">142 MSME clusters, tagged with the opportunities each suits. Unit counts per cluster are not published, so none are shown.</p></div>
+    <div class="controls">
+      <label class="ctl" for="cl-opp">Opportunity <select id="cl-opp"><option value="">Any</option></select></label>
+      <label class="ctl" for="cl-state">State <select id="cl-state"><option value="">All states</option></select></label>
+      <label class="ctl" for="cl-x">Export relevance <select id="cl-x"><option value="">Any</option><option value="H">High</option><option value="M">Medium</option><option value="L">Low</option></select></label>
+      <span class="muted" id="cl-count" style="font-size:var(--step--1)"></span>
+    </div>
+    <div class="tablewrap" style="max-height:520px"><table id="tb-clusters"><thead><tr><th>Cluster</th><th>District, state</th><th>Sector</th><th>Major products</th><th>Export</th><th>Fits</th></tr></thead><tbody></tbody></table></div>
+  </section>
+
+  <section id="validate">
+    <div class="sec-head"><span class="eyebrow">Brief §30–31, §35 · Before building</span><h2>Two theses to test, and five assumptions that decide them</h2></div>
+    <div class="two-theses">
+      <div class="thesis"><h3>MSME finance back-office</h3><p class="ink2">O2 CA copilot → O1 receivables copilot → O15 credit access. Win CA firms first; they hold the data and the trust for crores of MSMEs. Test in Rajkot and Ahmedabad.</p></div>
+      <div class="thesis"><h3>MSME decarbonisation stack</h3><p class="ink2">O6 CBAM/carbon compliance → O5 energy-as-a-service → agri-residue biomass fuel. This fits AgriKhet's Ecoharvest identity. Test in Ludhiana and Mandi Gobindgarh steel clusters.</p></div>
+    </div>
+    <ol class="assume">
+      <li><strong>Outcome-based willingness to pay.</strong> MSMEs or their CAs pay monthly or success fees tied to rupees recovered, orders won or penalties avoided. The test is paid pilots with deposits.</li>
+      <li><strong>Channel leverage.</strong> CA firms and cluster associations deliver customers at ₹50,000 CAC or less, and refer actively.</li>
+      <li><strong>Trust in an AI agent.</strong> Owners let an agent message their debtors and buyers, in their name and language.</li>
+      <li><strong>Accuracy at MSME data quality.</strong> 85–90% extraction accuracy on phone photos and mixed-language chats, with gross margin of 65% or more.</li>
+      <li><strong>CBAM pull persists.</strong> EU importers keep demanding verified supplier emissions data.</li>
+    </ol>
+    <p class="ink2"><strong>Kill rule:</strong> stop an opportunity if fewer than 3 of 20 target firms pay after seeing results, or if CAC exceeds 12 months of gross profit.</p>
+  </section>
+
+  <footer>
+    <span>Sources: MoSPI ASUSE 2025 and district estimates (2026), Ministry of MSME/Udyam, GSTN, SIDBI–Crisil, TransUnion CIBIL–SIDBI MSME Pulse, GAME–FISME–C2FO, Recordent, India SME Forum, NCAER–DPIIT, TeamLease RegTech, company filings (IndiaMART, Justdial and others). The full registry of 69 sources, 25 datasets and 17 report chapters is in the MSME-Research repository.</span>
+    <span>No primary interviews were conducted, and no responses were invented. The validation plan and instruments are in the repository.</span>
+  </footer>
+</div>
+<div id="tip" hidden></div>
+
+<script id="data" type="application/json">__DATA__</script>
+<script>
+(function(){
+const D = JSON.parse(document.getElementById('data').textContent);
+const NS = 'http://www.w3.org/2000/svg';
+const inr = new Intl.NumberFormat('en-IN');
+function units(n){
+  if (n == null || n === '') return '–';
+  n = Number(n);
+  if (n >= 1e7) return (n/1e7).toLocaleString('en-IN',{maximumFractionDigits: n>=1e8?1:2}) + ' crore';
+  if (n >= 1e5) return (n/1e5).toLocaleString('en-IN',{maximumFractionDigits:1}) + ' lakh';
+  return inr.format(Math.round(n));
+}
+function crf(x){ if (x === '' || x == null) return '–'; x = Number(x); return '₹' + inr.format(x >= 100 ? Math.round(x) : Math.round(x*10)/10) + ' cr'; }
+function el(tag, attrs, parent){ const e = document.createElementNS(NS, tag); for (const k in attrs) e.setAttribute(k, attrs[k]); if (parent) parent.appendChild(e); return e; }
+function txt(parent, x, y, s, cls, anchor){ const t = el('text', {x, y, class: cls||'', 'text-anchor': anchor||'start', 'dominant-baseline':'middle'}, parent); t.textContent = s; return t; }
+function esc(s){ return String(s == null ? '' : s).replace(/[&<>"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c])); }
+
+/* ---------- tooltip ---------- */
+const tip = document.getElementById('tip');
+document.addEventListener('pointermove', e => {
+  const t = e.target.closest && e.target.closest('[data-tip]');
+  if (!t){ tip.hidden = true; return; }
+  tip.innerHTML = t.getAttribute('data-tip');
+  tip.hidden = false;
+  const w = tip.offsetWidth, h = tip.offsetHeight;
+  let x = e.clientX + 14, y = e.clientY + 14;
+  if (x + w > innerWidth - 8) x = e.clientX - w - 14;
+  if (y + h > innerHeight - 8) y = e.clientY - h - 14;
+  tip.style.left = x + 'px'; tip.style.top = y + 'px';
+});
+document.addEventListener('pointerleave', () => tip.hidden = true);
+
+/* Horizontal bar: rounded data-end (4px), square at baseline */
+function barPath(x0, y, w, h){
+  const r = Math.min(4, w, h/2);
+  return `M${x0},${y} H${x0+w-r} Q${x0+w},${y} ${x0+w},${y+r} V${y+h-r} Q${x0+w},${y+h} ${x0+w-r},${y+h} H${x0} Z`;
+}
+
+function hbar(host, rows, o){
+  host.innerHTML = '';
+  const W = Math.max(300, host.clientWidth - 26), narrow = W < 560;
+  const labelW = narrow ? 0 : (o.labelW || 230), valW = o.valW || 110, barH = Math.min(o.barH || 18, 24);
+  const rowH = narrow ? barH + 26 : (o.rowH || 30), top = o.ref != null ? 16 : 0;
+  const H = top + rows.length * rowH + 28;
+  const svg = el('svg', {viewBox:`0 ${-top} ${W} ${H}`, width:W, height:H, role:'img', 'aria-label': o.aria}, host);
+  const plotW = W - labelW - valW;
+  const max = o.max || Math.max(...rows.map(r => r.value));
+  const sx = v => labelW + plotW * (v / max);
+  (o.ticks || []).forEach(t => {
+    el('line', {x1:sx(t), x2:sx(t), y1:0, y2:rows.length*rowH, class:'grid'}, svg);
+    txt(svg, sx(t), rows.length*rowH + 14, o.tickFmt ? o.tickFmt(t) : t, 'tick', t === 0 && narrow ? 'start' : 'middle');
+  });
+  el('line', {x1:labelW, x2:labelW, y1:0, y2:rows.length*rowH, class:'base'}, svg);
+  if (o.ref != null){
+    el('line', {x1:sx(o.ref), x2:sx(o.ref), y1:-6, y2:rows.length*rowH, class:'ref'}, svg);
+    txt(svg, sx(o.ref)+4, -9, o.refLabel || '', 'reftxt');
+  }
+  rows.forEach((r, i) => {
+    const y = narrow ? i*rowH + 20 : i*rowH + (rowH - barH)/2;
+    const g = el('g', {class:'row', 'data-tip': r.tip || esc(r.label)}, svg);
+    el('rect', {x:0, y:i*rowH, width:W, height:rowH, class:'hit'}, g);
+    if (narrow) txt(g, 0, i*rowH + 9, r.label, 'lbl', 'start');
+    else txt(g, labelW - 10, i*rowH + rowH/2, r.label, 'lbl', 'end');
+    const w = Math.max(1.5, sx(r.value) - labelW);
+    el('path', {d: barPath(labelW, y, w, barH), class: 'bar' + (r.est ? ' est' : '')}, g);
+    txt(g, labelW + w + 8, y + barH/2, r.valueLabel, 'val');
+  });
+}
+
+function logRange(host, rows, o){
+  host.innerHTML = '';
+  const W = Math.max(300, host.clientWidth - 26), narrow = W < 460, pad = 22;
+  const labelW = narrow ? 0 : (o.labelW || 150), rowH = narrow ? 40 : 30;
+  const H = rows.length * rowH + 30;
+  const svg = el('svg', {viewBox:`0 0 ${W} ${H}`, width:W, height:H, role:'img', 'aria-label': o.aria}, host);
+  const lo = Math.log10(o.min), hi = Math.log10(o.max), x0 = narrow ? 12 : labelW, plotW = W - x0 - pad;
+  const sx = v => x0 + plotW * (Math.log10(v) - lo) / (hi - lo);
+  o.ticks.forEach(t => {
+    el('line', {x1:sx(t[0]), x2:sx(t[0]), y1:0, y2:rows.length*rowH, class:'grid'}, svg);
+    txt(svg, sx(t[0]), rows.length*rowH + 14, t[1], 'tick', 'middle');
+  });
+  rows.forEach((r, i) => {
+    const cy = narrow ? i*rowH + 28 : i*rowH + rowH/2;
+    const g = el('g', {class:'row', 'data-tip': r.tip}, svg);
+    el('rect', {x:0, y:i*rowH, width:W, height:rowH, class:'hit'}, g);
+    if (narrow) txt(g, 0, i*rowH + 10, r.label, 'lbl', 'start');
+    else txt(g, labelW - 10, cy, r.label, 'lbl', 'end');
+    el('line', {x1:sx(r.low), x2:sx(r.high), y1:cy, y2:cy, class:'range'}, g);
+    el('circle', {cx:sx(r.mid), cy, r:5, class:'dot'}, g);
+  });
+}
+
+function htmlTable(host, headers, rows){
+  host.innerHTML = '<table><thead><tr>' + headers.map(h => `<th${h.r?' class="r"':''}>${esc(h.t)}</th>`).join('') +
+    '</tr></thead><tbody>' + rows.map(r => '<tr>' + r.map((c,i) => `<td${headers[i].r?' class="r num"':''}>${esc(c)}</td>`).join('') + '</tr>').join('') + '</tbody></table>';
+}
+
+/* ---------- funnel ---------- */
+const F = D.funnel;
+const pick = (pred) => F.find(pred);
+const fRows = [
+  ['Registered on Udyam (URP + UAP)', pick(r => r.metric.startsWith('Udyam registrations'))],
+  ['Operating establishments (ASUSE 2025)', pick(r => r.metric.startsWith('Unincorporated'))],
+  ['Use internet for business', pick(r => r.metric.startsWith('Establishments using internet'))],
+  ['GST-registered, filing regularly', pick(r => r.metric.startsWith('Estimated GST-registered'))],
+  ['Employ at least one hired worker', pick(r => r.metric.startsWith('Hired-worker'))],
+  ['Run billing or accounting software', pick(r => r.metric.startsWith('Estimated MSMEs using billing'))],
+  ['Have a website', pick(r => r.metric.startsWith('Estimated MSMEs with a website'))],
+  ['Turnover ₹5 crore or more (e-invoicing)', pick(r => r.metric.startsWith('Estimated MSMEs with turnover'))],
+].filter(r => r[1]).map(([label, r]) => ({
+  label, value: r.value, est: r.type === 'estimate',
+  valueLabel: (r.type === 'estimate' ? '~' : '') + units(r.value),
+  tip: `<strong>${esc(label)}</strong><br>${units(r.value)} · ${esc(r.type)} · ${esc(r.ref)}<br>Source: ${esc(r.src)}`
+}));
+const charts = [];
+charts.push(() => hbar(document.getElementById('ch-funnel'), fRows, {aria:'MSME universe funnel', labelW:250, valW:100, ticks:[0,2e7,4e7,6e7,8e7], tickFmt:t => t ? (t/1e7)+' cr' : '0', max:9.5e7}));
+htmlTable(document.getElementById('tb-funnel'), [{t:'Stage'},{t:'Count',r:1},{t:'Type'},{t:'Ref.'},{t:'Source'}],
+  F.map(r => [r.metric, units(r.value), r.type, r.ref, r.src]));
+
+/* ---------- opportunities ---------- */
+const O = D.opportunities;
+const somMax = Math.max(...O.map(o => Number(o.som_year5_high_cr) || 0));
+const opBody = document.querySelector('#tb-opps tbody');
+function somSvg(o){
+  const lo = Number(o.som_year5_low_cr), hi = Number(o.som_year5_high_cr);
+  if (!lo && !hi) return '<span class="muted">–</span>';
+  const W = 170, x = v => 4 + (W - 60) * v / somMax;
+  return `<svg viewBox="0 0 ${W} 18" width="${W}" height="18" aria-label="SOM ${lo} to ${hi} crore" data-tip="Year-5 ARR ₹${lo}–${hi} cr<br>${esc(o.som_inputs)}">
+    <line x1="4" x2="${W-60}" y1="9" y2="9" class="grid"/>
+    <line x1="${x(lo)}" x2="${x(hi)}" y1="9" y2="9" class="range"/>
+    <circle cx="${x(lo)}" cy="9" r="4" class="dot"/><circle cx="${x(hi)}" cy="9" r="4" class="dot"/>
+    <text x="${x(hi)+8}" y="9" dominant-baseline="middle" class="val" style="font-size:11.5px">${hi>=100?Math.round(hi):hi}</text></svg>`;
+}
+function renderOpps(cat){
+  opBody.innerHTML = '';
+  O.filter(o => cat === 'all' || o.category[0] === cat).forEach(o => {
+    const c = o.category[0];
+    const tr = document.createElement('tr'); tr.className = 'main'; tr.tabIndex = 0; tr.setAttribute('aria-expanded','false');
+    tr.innerHTML = `<td class="idc">${o.id}</td><td>${esc(o.opportunity)}</td><td><span class="cat ${c}">${esc(o.category)}</span></td>
+      <td class="bar-cell">${somSvg(o)}</td><td class="r num">${crf(o.tam_bottom_up_cr)}</td>
+      <td class="r num">${crf(o.tam_top_down_low_cr)}–${inr.format(Math.round(o.tam_top_down_high_cr))}</td><td class="ink2" style="font-size:var(--step--1)">${esc(o.evidence_confidence)}</td>`;
+    const dr = document.createElement('tr'); dr.className = 'detail'; dr.hidden = true;
+    const f = [['Target customer', o.target_customer],['Problem IDs', o.problems],['Pain level', o.pain_level],['Existing alternatives', o.existing_alternatives],
+      ['Why they fall short', o.why_insufficient],['Proposed solution', o.proposed_solution],['Business model', o.business_model],['Pricing', o.pricing],
+      ['SAM', crf(o.sam_cr) + ' · ' + o.sam_basis],['Customer basis', o.customers_basis],['Acquisition', o.acquisition],['Time to MVP / capital', o.time_to_mvp + ' / ' + o.capital],
+      ['Gross margin', o.gross_margin],['Regulatory risk', o.regulatory_risk],['International', o.international],['Evidence', o.evidence_strength],
+      ['Matrix', `Market ${o.market_size} · Severity ${o.problem_severity} · WTP ${o.willingness_to_pay} · Competition ${o.competition} · CAC difficulty ${o.cac_difficulty} · MVP ${o.mvp_difficulty} · Scalability ${o.scalability} · 5–10 yr ${o.potential_5_10yr}`]];
+    dr.innerHTML = `<td></td><td colspan="6"><dl>${f.map(([k,v]) => `<dt>${esc(k)}</dt><dd>${esc(v)}</dd>`).join('')}</dl></td>`;
+    const toggle = () => { dr.hidden = !dr.hidden; tr.setAttribute('aria-expanded', String(!dr.hidden)); };
+    tr.addEventListener('click', toggle);
+    tr.addEventListener('keydown', e => { if (e.key === 'Enter' || e.key === ' '){ e.preventDefault(); toggle(); } });
+    opBody.append(tr, dr);
+  });
+}
+document.querySelectorAll('.chip[data-cat]').forEach(b => b.addEventListener('click', () => {
+  document.querySelectorAll('.chip[data-cat]').forEach(x => x.setAttribute('aria-pressed', String(x === b)));
+  renderOpps(b.dataset.cat);
+}));
+renderOpps('all');
+
+/* ---------- problems ---------- */
+const P = D.problems;
+const pbBody = document.querySelector('#tb-probs tbody');
+const pbCat = document.getElementById('pb-cat');
+[...new Set(P.map(p => p.category))].sort().forEach(c => pbCat.add(new Option(c, c)));
+let sortK = 'rank', sortDir = 1;
+const numericK = new Set(['rank','weighted_score','wtp','existing_spend','acquisition_ease']);
+function scoreSvg(p){
+  const s = Number(p.weighted_score), W = 170, x = v => (W - 40) * v / 10;
+  return `<svg viewBox="0 0 ${W} 16" width="${W}" height="16" aria-label="Score ${s}" data-tip="Weighted ${s} · equal-weight rank #${p.equal_weight_rank}">
+    <line x1="0" x2="${W-40}" y1="8" y2="8" class="grid"/>
+    <path d="${barPath(0, 2, Math.max(1, x(s)), 12)}" class="bar"/>
+    <text x="${x(s)+6}" y="8" dominant-baseline="middle" class="val" style="font-size:11.5px">${s.toFixed(2)}</text></svg>`;
+}
+function renderProbs(){
+  const q = document.getElementById('pb-search').value.trim().toLowerCase();
+  const c = pbCat.value, cf = document.getElementById('pb-conf').value;
+  const rows = P.filter(p => (!c || p.category === c) && (!cf || p.evidence_confidence === cf) &&
+      (!q || (p.problem + ' ' + p.id + ' ' + p.category).toLowerCase().includes(q)))
+    .sort((a, b) => {
+      const av = numericK.has(sortK) ? Number(a[sortK]) : String(a[sortK]); const bv = numericK.has(sortK) ? Number(b[sortK]) : String(b[sortK]);
+      return (av > bv ? 1 : av < bv ? -1 : 0) * sortDir;
+    });
+  pbBody.innerHTML = '';
+  rows.forEach(p => {
+    const tr = document.createElement('tr'); tr.className = 'main'; tr.tabIndex = 0; tr.setAttribute('aria-expanded','false');
+    tr.innerHTML = `<td class="num idc">${p.rank}</td><td class="idc">${p.id}</td><td>${esc(p.problem)}</td><td class="ink2" style="font-size:var(--step--1)">${esc(p.category)}</td>
+      <td class="bar-cell">${scoreSvg(p)}</td><td class="r num">${p.wtp}</td><td class="r num">${p.existing_spend}</td><td class="r num">${p.acquisition_ease}</td>
+      <td><span class="conf ${p.evidence_confidence}">${p.evidence_confidence}</span></td>`;
+    const dr = document.createElement('tr'); dr.className = 'detail'; dr.hidden = true;
+    const ev = (D.problem_evidence || {})[p.id] || {};
+    const crit = D.criteria.map(k => `${k.label.replace(/ \(.*\)/,'')}: <strong>${p[k.key]}</strong>`).join(' · ');
+    dr.innerHTML = `<td></td><td colspan="8"><dl>
+      <dt>Who is affected</dt><dd>${esc(ev.msmes_affected || '')}</dd>
+      <dt>Financial impact (evidence)</dt><dd>${esc(ev.financial_impact_evidence || '')}</dd>
+      <dt>Current solution</dt><dd>${esc(ev.current_solution || '')}</dd>
+      <dt>Current spending</dt><dd>${esc(ev.current_spending || '')}</dd>
+      <dt>Startup opportunity</dt><dd>${esc(ev.startup_opportunity || '')}</dd>
+      <dt>Sources</dt><dd>${esc(ev.source_ids || '')}</dd>
+      <dt>All 14 scores</dt><dd>${crit}</dd></dl></td>`;
+    const toggle = () => { dr.hidden = !dr.hidden; tr.setAttribute('aria-expanded', String(!dr.hidden)); };
+    tr.addEventListener('click', toggle);
+    tr.addEventListener('keydown', e => { if (e.key === 'Enter' || e.key === ' '){ e.preventDefault(); toggle(); } });
+    pbBody.append(tr, dr);
+  });
+}
+document.querySelectorAll('#tb-probs th[data-k] button').forEach(b => b.addEventListener('click', () => {
+  const th = b.parentElement, k = th.dataset.k;
+  if (sortK === k) sortDir = -sortDir; else { sortK = k; sortDir = numericK.has(k) && k !== 'rank' ? -1 : 1; }
+  document.querySelectorAll('#tb-probs th[data-k]').forEach(x => x.removeAttribute('aria-sort'));
+  th.setAttribute('aria-sort', sortDir === 1 ? 'ascending' : 'descending');
+  renderProbs();
+}));
+['pb-search','pb-cat','pb-conf'].forEach(id => document.getElementById(id).addEventListener('input', renderProbs));
+renderProbs();
+
+/* ---------- turnover & digital ---------- */
+const logTicks = [[1e4,'10k'],[1e5,'1 lakh'],[1e6,'10 lakh'],[1e7,'1 crore'],[1e8,'10 crore']];
+const T = D.turnover.map(r => ({label: r.bracket.replace('Rs ', '₹').replace('Rs ', '₹').replace(' (not MSME)',' *'), low: r.est_low, high: r.est_high, mid: r.est_mid,
+  tip: `<strong>${esc(r.bracket)}</strong><br>${units(r.est_low)} – ${units(r.est_high)} (mid ${units(r.est_mid)})<br>Confidence: ${esc(r.confidence)}`}));
+charts.push(() => logRange(document.getElementById('ch-turnover'), T, {aria:'Turnover distribution', min:5e3, max:1e8, ticks:logTicks, labelW:130}));
+htmlTable(document.getElementById('tb-turnover'), [{t:'Bracket'},{t:'Low',r:1},{t:'Mid',r:1},{t:'High',r:1},{t:'Confidence'}],
+  D.turnover.map(r => [r.bracket, units(r.est_low), units(r.est_mid), units(r.est_high), r.confidence]));
+const shortLvl = {'L1 WhatsApp + digital payments':'L1 WhatsApp + UPI','L2 Accounting/GST software':'L2 Accounting software','L3 Multiple SaaS tools':'L3 Several SaaS tools','L4 Integrated ERP':'L4 Integrated ERP','L5 AI/data-driven':'L5 AI-driven'};
+const L = D.digital_levels.map(r => ({label: shortLvl[r.level] || r.level, low: r.est_low, high: r.est_high, mid: Math.sqrt(r.est_low * r.est_high),
+  tip: `<strong>${esc(r.level)}</strong>: ${esc(r.definition)}<br>${units(r.est_low)} – ${units(r.est_high)}<br>${esc(r.basis)} · confidence ${esc(r.confidence)}`}));
+charts.push(() => logRange(document.getElementById('ch-digital'), L, {aria:'Digital maturity ladder', min:5e3, max:1e8, ticks:logTicks, labelW:150}));
+htmlTable(document.getElementById('tb-digital'), [{t:'Level'},{t:'Low',r:1},{t:'High',r:1},{t:'Basis'},{t:'Confidence'}],
+  D.digital_levels.map(r => [r.level, units(r.est_low), units(r.est_high), r.basis, r.confidence]));
+
+/* ---------- states ---------- */
+const S = D.states.filter(s => s.total_per_lakh_pop).sort((a, b) => b.total_per_lakh_pop - a.total_per_lakh_pop);
+charts.push(() => hbar(document.getElementById('ch-density'), S.map(s => {
+  const sec = !String(s.total_source).startsWith('S04');
+  return {label: s.state + (sec ? ' †' : ''), value: s.total_per_lakh_pop, valueLabel: inr.format(s.total_per_lakh_pop), est: sec,
+    tip: `<strong>${esc(s.state)}</strong><br>${units(s.udyam_urp_uap_total)} registrations · ${s.population_2026_crore} cr people<br>${esc(s.total_source)}`};
+}), {aria:'Registrations per lakh population', labelW:150, valW:70, rowH:26, barH:16, ticks:[0,4000,8000,12000], tickFmt:t => inr.format(t), max:13500}));
+const R = D.states.filter(s => s.urp_to_survey_base_ratio).sort((a, b) => b.urp_to_survey_base_ratio - a.urp_to_survey_base_ratio);
+charts.push(() => hbar(document.getElementById('ch-formal'), R.map(s => ({label: s.state, value: s.urp_to_survey_base_ratio, valueLabel: s.urp_to_survey_base_ratio.toFixed(2),
+  tip: `<strong>${esc(s.state)}</strong><br>URP ${units(s.udyam_urp)} ÷ ${esc(s.survey_base_used)} base<br>Ratio ${s.urp_to_survey_base_ratio}`})),
+  {aria:'Formalisation ratio', labelW:130, valW:50, rowH:26, barH:16, ticks:[0,0.5,1,1.5], max:1.5, ref:1, refLabel:'1.0 = parity'}));
+const drawAll = () => charts.forEach(f => f());
+drawAll();
+let lastW = document.querySelector('.wrap').clientWidth, rt;
+new ResizeObserver(() => { const w = document.querySelector('.wrap').clientWidth; if (w === lastW) return; lastW = w; clearTimeout(rt); rt = setTimeout(drawAll, 120); }).observe(document.querySelector('.wrap'));
+htmlTable(document.getElementById('tb-states'), [{t:'State'},{t:'Udyam URP',r:1},{t:'URP + UAP',r:1},{t:'Per lakh pop.',r:1},{t:'Formalisation ratio',r:1},{t:'FY26 Udyam jobs (lakh)',r:1},{t:'Exports FY25 ($ bn)',r:1},{t:'Source of total'}],
+  D.states.map(s => [s.state, inr.format(s.udyam_urp), s.udyam_urp_uap_total ? inr.format(s.udyam_urp_uap_total) : '–', s.total_per_lakh_pop ? inr.format(s.total_per_lakh_pop) : '–',
+    s.urp_to_survey_base_ratio || '–', s.udyam_reported_employment_fy26_lakh || '–', s.merchandise_exports_fy25_usd_bn || '–', s.total_source]));
+
+/* ---------- clusters ---------- */
+const C = D.clusters;
+const clOpp = document.getElementById('cl-opp'), clState = document.getElementById('cl-state'), clX = document.getElementById('cl-x');
+O.filter(o => o.category[0] !== 'D').forEach(o => clOpp.add(new Option(o.id + ' · ' + o.opportunity.slice(0, 48), o.id)));
+[...new Set(C.map(c => c.state))].sort().forEach(s => clState.add(new Option(s, s)));
+const xName = {H:'High', M:'Medium', L:'Low'};
+function renderClusters(){
+  const op = clOpp.value, st = clState.value, xr = clX.value;
+  const rows = C.filter(c => (!op || c.opp.split(';').includes(op)) && (!st || c.state === st) && (!xr || c.export === xr));
+  document.getElementById('cl-count').textContent = rows.length + ' of ' + C.length + ' clusters';
+  document.querySelector('#tb-clusters tbody').innerHTML = rows.map(c =>
+    `<tr><td><strong>${esc(c.cluster)}</strong></td><td>${esc(c.district)}, ${esc(c.state)}</td><td>${esc(c.sector)}</td><td class="ink2">${esc(c.products)}</td>
+     <td>${xName[c.export] || ''}</td><td class="idc">${esc(c.opp.replace(/;/g, ' · '))}</td></tr>`).join('');
+}
+[clOpp, clState, clX].forEach(s => s.addEventListener('input', renderClusters));
+renderClusters();
+})();
+</script>
