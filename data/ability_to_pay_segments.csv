@@ -1,0 +1,5 @@
+segment,approx_units,typical_monthly_software_budget,buying_behaviour,attractiveness
+Very small (turnover < Rs 40 lakh),6.5-7.0 crore,Rs 0-200,"Free apps; pays via lending, payments or float; needs assisted onboarding",Low for SaaS; viable only for fintech/payments distribution models
+Formal small (Rs 40 lakh-1.5 cr),55-70 lakh,"Rs 300-1,500",Pays CA Rs 1-3k/month; buys billing app (Rs 2-5k/yr); WhatsApp-native,Medium: large but churn-prone; sell through CAs and distributors
+Growing (Rs 1.5-10 cr),17-25 lakh,"Rs 1,500-8,000",Accountant on payroll or CA; Tally; buys leads (IndiaMART/Justdial); owner decides,"High: best balance of count, pain and ability to pay"
+Established (Rs 10-500 cr),3.5-5 lakh,"Rs 10,000-1,00,000+",Finance and sales staff; ERP or Tally+add-ons; evaluates ROI; some procurement process,"High ACV, lower count; best for compliance, receivables, energy and quality"

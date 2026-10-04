@@ -1,0 +1,15 @@
+key,criterion,weight_pct,anchors
+customers,Number of customers affected,6,10: >1 crore MSMEs; 8: 10 lakh-1 crore; 6: 2-10 lakh; 4: 50k-2 lakh; 2: <50k direct buyers
+severity,Pain severity,8,10: existential/cash crisis; 5: notable cost; 2: annoyance
+frequency,Frequency,6,10: daily; 8: weekly; 6: monthly; 4: quarterly; 2: annual or one-off
+financial_impact,Financial impact per affected firm,8,10: >5% of revenue; 7: 2-5%; 5: 1-2%; 3: <1%
+wtp,Willingness to pay (evidence),12,10: demonstrated large-scale payment for this outcome; 7: some paying segments; 4: stated interest only; 2: expects free
+existing_spend,Existing spending pool,10,"10: Rs 1,000 cr+ observable revenue to incumbents; 7: Rs 100-1,000 cr; 4: <Rs 100 cr; 2: negligible"
+competitive_white_space,Competitive white space (inverse of intensity),7,"10: few or no credible solutions; 5: several but clear gaps; 2: saturated, funded incumbents or free tools"
+acquisition_ease,Ease of customer acquisition,10,"10: concentrated buyers or channel with pull; 5: feasible via field/partners; 2: diffuse, high CAC"
+tech_feasibility,Technology feasibility,5,10: buildable with current tech in <6 months; 5: needs hardware or deep integrations; 2: research-grade
+scalability,Scalability,7,10: software-only pan-India; 5: needs local ops; 2: heavy services or capex
+gross_margin,Gross-margin potential,6,10: >75%; 7: 50-75%; 4: 20-50%; 2: <20%
+regulatory_ease,Regulatory ease (inverse of complexity),3,"10: no licence; 6: data/consumer rules; 3: licensed activity (NBFC, insurance, payments)"
+retention,Retention potential,7,10: system of record or embedded workflow; 5: periodic; 2: one-off
+expansion,Expansion opportunity,5,10: clear cross-sell and international; 5: some; 2: narrow

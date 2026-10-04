@@ -1,0 +1,126 @@
+# 15. Sources and data-quality log
+
+> Brief sections 32–33. Machine-readable registry: `data/sources.csv`. Every major statistic in the report cites one of these IDs.
+
+## 15.1 How this study was compiled (read this first)
+
+- **Research cut-off:** 4 October 2026.
+- **Access constraint.** The sandbox's network policy **blocked direct downloads** from government portals (pib.gov.in, mospi.gov.in, data.gov.in, dashboard.msme.gov.in, udyamregistration.gov.in) and from many news sites. Figures were captured from **search-engine extracts of the pages listed below**, so the quoted figures have not been checked against the full documents. **Re-verify every number against its primary URL before external use**, especially where the tier is "secondary".
+- **Primary research:** none conducted. Chapter 13 and `/instruments` contain the design. No interview data was invented.
+- **Tiers:** official (government/regulator) · company (filings, investor material) · industry (association/institute surveys) · secondary (news/aggregators reporting a primary figure).
+
+## 15.2 Data-quality rules applied (brief section 33)
+
+| Rule | How it was applied |
+|---|---|
+| Never invent missing data | Missing cells are blank or marked "data unavailable" (e.g., state-wise MSME GVA, cluster unit counts, national OEE, ZED certification counts) |
+| Registered ≠ active | A separate funnel (chapter 1) for registered → potentially active → commercially active → digitally active |
+| Estimates vs observed | Every dataset row has `data_type` or `confidence`; estimates state their method |
+| Source + year for major numbers | Source IDs and reference dates on every table |
+| Cross-check important numbers | Delayed payments (GAME 3.0 vs Economic Survey); MSME count (Udyam vs ASUSE vs NSS vs GST); firms > ₹10 cr (Udyam small+medium vs power-law estimate); website presence (two methods); O1/O2 TAM (two methods) |
+| Flag conflicts | See 15.3 |
+| Avoid inflated TAM | Top-down and bottom-up for each opportunity; the lower figure is used where they diverge (O3); D-category TAMs are shown as theoretical and contradicted by observed revenues |
+| Latest data | ASUSE 2025 (released Mar 2026) and its district estimates (Sep 2026); Udyam to Jul-2026; GST to Jun-2026; IndiaMART/Justdial FY26 |
+| Separate micro vs SMEs; B2B vs B2C | Ability-to-pay segments (chapter 3); B2B framing for all A-category opportunities |
+| WTP evidence over assumption | WTP scored from observed spend (IndiaMART, Justdial, OfBusiness, Tally, Clear, Khatabook/OkCredit) |
+| Problem ≠ opportunity | Separate problem scores (chapter 5) and opportunity categories (chapter 10) |
+
+## 15.3 Conflicts and how they were resolved
+
+| Topic | Conflicting figures | Resolution |
+|---|---|---|
+| MSME employment | Udyam cumulative 38+ crore (S08) vs ASUSE 12.81 crore workers (S01) vs NSS 11.10 crore (2015-16) | Use ASUSE. The Udyam figure is self-declared, cumulative and not de-duplicated |
+| Delayed payments | ₹7.34 lakh cr (Mar-2024, S20) vs ~₹8.1 lakh cr (Economic Survey 2025-26, S19) vs ₹10.7 lakh cr (2022) | Report the 7.34–8.1 range; the 2022 figure is superseded |
+| Credit gap | ₹30 lakh cr addressable (SIDBI-Crisil 2025, S17) vs ₹80 lakh cr unmet (NITI, FY21 basis, S54) | Use SIDBI-Crisil (newer, defined as addressable) |
+| Udyam sector split | Trading 42.89% / services 36.22% / mfg 20.89% (27-Feb-2026, S07) vs an older 3.19/2.61/1.54 crore split | Same direction; use the 2026 shares |
+| Telangana registrations | URP 18.8 lakh (S09) vs URP 24.2 lakh within a 49.2 lakh URP+UAP total (secondary) | Likely different dates; both shown and flagged |
+| Tamil Nadu URP+UAP | ~62.4 lakh (secondary) vs 45.2 lakh (Dec-2024) | Show the 2026 secondary figure flagged "verify" |
+| Website presence | 19% (survey) vs 35% (2026 secondary claim) | Neither is representative; triangulated 20–35 lakh firms (~2.5–4.5% of all establishments) |
+| MSME export share | 45.73% (FY24) vs 45.79% (FY25 up to May-2024) | Same source series; note the partial-year basis |
+| Exporting MSMEs | 52,849 (FY21) → 1,73,350 (FY25) | Growth partly reflects better Udyam–IEC linkage; treat growth with caution |
+| ZED certification counts | Portal snippets inconsistent with earlier PIB statements | Marked "data unavailable" |
+| FloBiz (myBillBook) revenue | $15m vs $114.5m in aggregator snippets | Not used |
+| Masters India revenue | Inconsistent aggregator ranges | Not used |
+
+## 15.4 Datasets that should be pulled next (when network access is available)
+
+1. **ASUSE 2025 state and 757-district tables** (MoSPI; mirrored on dataful.in): establishments, workers, GVA, internet use and hired-worker share by district. Fills the state "estimated active", digital-maturity and district counts.
+2. **Udyam dashboard**: state × NIC × size and district counts (dashboard.msme.gov.in).
+3. **GSTN statistical report**: full turnover-slab counts (refines chapter 3 below ₹5 cr).
+4. **DGFT/DGCI&S**: IEC holders with recent shipping bills, by district (refines export-capable estimates).
+5. **MCA company master data** (data.gov.in): company-level list for the public contact pipeline (chapter 16).
+6. **SIDBI MSME Pulse** state annexes: credit penetration by state (fills "financing gap by state").
+
+## 15.5 Source registry
+
+| ID | Tier | Publisher | Title / statistic | Period | URL |
+|---|---|---|---|---|---|
+| S01 | official | MoSPI / PIB | Annual Survey of Unincorporated Sector Enterprises (ASUSE) Results for 2025 | Jan-Dec 2025 (released Mar 2026) | https://www.pib.gov.in/PressReleasePage.aspx?PRID=2244457&reg=3&lang=1 |
+| S01b | official | MoSPI | Press Note on ASUSE 2025 | Jan-Dec 2025 | https://www.mospi.gov.in/uploads/latestReleases/latest_release_1774347321466_c16ddf22-bfff-4097-88a7-b3134e464d51_Press_Note_ASUSE_2025_English.pdf |
+| S02 | official | MoSPI (NSO) | First district-level estimates of the unincorporated non-agricultural sector (ASUSE 2025), 757 districts | Jan-Dec 2025 (released Sep 2026) | https://www.mospi.gov.in/uploads/latestReleases/latest_release_1789035138998_a5c9e7a1-007e-43d5-97a7-efa59a676e81_Press_Note_District_Report_ASUSE_English.pdf |
+| S02b | secondary | The Tribune / BusinessToday / Business Standard / Factly | Coverage of ASUSE 2025 district estimates (top districts, GVA per worker, emoluments) | Sep 2026 | https://www.tribuneindia.com/news/asuse-2025/top-50-districts-account-for-nearly-one-third-of-indias-unincorporated-sector-activity-mospi |
+| S03 | secondary | IANS / NewKerala / The Hawk (citing Udyam factsheet) | Udyam combined factsheet as on 15-Mar-2026 (URP + UAP, micro/small/medium, employment) | 15-Mar-2026 | https://www.thehawk.in/news/science/nearly-9-crore-msmes-registered-on-udyam-platforms-generating-38-crore-jobs |
+| S04 | official | Ministry of MSME / PIB | Over 7.83 crore enterprises registered on Udyam Registration Portal (URP); growth trend; state-wise Annexure-I | as on 28-Feb-2026 | https://www.pib.gov.in/PressReleasePage.aspx?PRID=2246892&reg=3&lang=1 |
+| S05 | secondary | KNN India (MoS reply, Rajya Sabha) | Over 8.84 crore MSMEs registered on Udyam platforms | as on 30-Jun-2026 | https://knnindia.co.in/news/newsdetails/msme/over-884-crore-msmes-registered-on-udyam-platforms-mos-karandlaje |
+| S06 | secondary | Legal Suvidha / ANI (Parliament reply) | 9.16 crore MSMEs registered on Udyam Registration Portal and Udyam Assist Platform | as on 31-Jul-2026 | https://legalsuvidha.com/latest-updates/msmes-registered-on-udyam-210726 |
+| S07 | secondary | ANI (Lok Sabha written reply, MoS MSME) | MSMEs report over 8 crore jobs under UDYAM in FY2025-26; Uttar Pradesh leads; activity shares as on 27-Feb-2026 | FY2025-26 | https://aninews.in/news/business/government-says-msmes-now-report-over-8-crore-jobs-under-udyam-uttar-pradesh-leads-states20260723151624/ |
+| S08 | secondary | IANS / ANI | Nearly 9 crore MSMEs registered on Udyam platforms, generating 38 crore jobs | Jul 2026 | https://ianslive.in/nearly-9-crore-msmes-registered-on-udyam-platforms-generating-38-crore-jobs--20260714145911 |
+| S09 | secondary | DataRankIndia (compilation of Udyam portal data) | India MSME Statistics 2026: state-wise and district-wise Udyam (URP) registration data | 2026 (as published by compiler) | https://datarankindia.com/india-msme-statistics/ |
+| S10 | official | Office of DC (MSME) | Udyam Registration Bulletin VII - Analysis of Udyam Registration Data | Sep 2021 data | https://dcmsme.gov.in/Buletin-VII-Analysis-of-Udyam-Registration-Data.pdf |
+| S11 | official | NSO (NSS 73rd round) via Ministry of MSME Annual Report | Unincorporated non-agricultural MSMEs, 2015-16 (633.88 lakh enterprises, 11.10 crore employment) | Jul 2015-Jun 2016 | https://msme.gov.in/sites/default/files/FINALMSMEANNUALREPORT2023-24ENGLISH.pdf |
+| S12 | official | GSTN (via A2Z Taxcorp summary) | Nine Years of GST statistical report - 1.67 crore active taxpayers as of 30-Jun-2026 | 30-Jun-2026 | https://a2ztaxcorp.net/nine-years-of-gst-taxpayer-base-crosses-1-67-crore-as-indias-digital-indirect-tax-ecosystem-scales-new-milestones-report-highlights-expansion-of-taxpayer-base-192-27-crore-returns-filed-an/ |
+| S13 | official | GSTN | A Statistical Report on Completion of 8 Years of GST (turnover-slab distribution) | FY2024-25 / 30-Jun-2025 | https://tutorial.gst.gov.in/offlineutilities/gst_statistics/8YearsReport.pdf |
+| S14 | secondary | GST e-invoice statistics (via InstaFinancials / GST portal) | e-invoice: 13.1 lakh GSTINs enabled (Oct 2025); 8.56 lakh GSTINs generated e-invoices (Jun 2026) | Oct 2025 / Jun 2026 | https://blog.instafinancials.com/2025/10/23/e-invoicing-updates-october-2025/ |
+| S15 | secondary | Probe42 monthly newsletter (MCA data) | 25,52,715 active companies and LLPs out of 36,16,812 ever registered | Feb 2026 | https://resources.probe42.in/wp-content/uploads/2026/03/Probe-Monthly-Newsletter-February-2026.pdf |
+| S16 | official | MoSPI | Annual Survey of Industries 2024-25 press note (2.67 lakh factories; 2.60 lakh in 2023-24; Tamil Nadu top) | FY2024-25 | https://www.mospi.gov.in/uploads/latestReleases/latest_release_1790768522303_b1ee6ba9-c9d3-481a-b30e-45a24c7f3729_PIB_Note_ASI_2024-25_English.pdf |
+| S64 | secondary | PIB (ASUSE 2023-24) via search extract | ASUSE 2023-24 state estimates of establishments (UP, WB, MH) | Oct 2023-Sep 2024 | https://www.pib.gov.in/PressReleseDetailm.aspx?PRID=2097316&reg=48&lang=2 |
+| S17 | industry | SIDBI with Crisil Intelligence | Understanding Indian MSME Sector: Progress and Challenges (survey of 2,097 MSMEs, 19 sectors) | May 2025 | https://www.sidbi.in/uploads/Understanding_Indian_MSME_sector_Progress_and_Challenges_13_05_25_Final.pdf |
+| S18 | industry | TransUnion CIBIL - SIDBI | MSME Pulse (July 2026) | Mar 2026 data | https://www.transunioncibil.com/lp/msme-pulse-jul-2026 |
+| S19 | official | Ministry of Finance (Economic Survey 2025-26) via KNN / news | Economic Survey 2025-26: ~Rs 8.1 lakh crore locked in delayed payments to MSMEs | Jan 2026 | https://knnindia.co.in/news/newsdetails/msme/economic-survey-flags-delayed-payments-lack-of-access-to-formal-credit-as-key-challenges-for-msmes |
+| S20 | industry | GAME, FISME, C2FO | Delayed Payments Report 3.0 - Rs 7.34 lakh crore delayed (Mar 2024), down from Rs 10.7 lakh crore (2022) | Mar 2024 (released Nov 2025) | https://fisme.org.in/study/delayed-payments-to-msmes-decline-from-rs-10-lakh-cr-to-rs-7-lakh-cr-but-challenges-persist-game-fisme-report/ |
+| S21 | official | Ministry of MSME Annual Report 2025-26 (MSME Samadhaan) | 2,56,892 delayed-payment applications involving Rs 55,244.31 crore filed up to 31-Dec-2025 | to 31-Dec-2025 | https://smestreet.in/smestreet-exclusive/msme-development-amendment-bill-2026-delayed-payments-analysis-12208060 |
+| S22 | industry | Recordent | Indian SME Receivables Report 2026 (~1.1 lakh MSMEs, 10 lakh+ transactions) | Jun 2026 | https://smestreet.in/infocus/indian-smes-face-mounting-working-capital-stress-as-average-overdue-receivables-cross-383-crore-recordent-12111904 |
+| S23 | official | RBI entity-wise TReDS statistics; platform disclosures | TReDS: Rs 3.47 lakh crore discounted in FY2025-26; MSME sellers registered by platform | FY2025-26 / Jul 2026 | https://www.rbi.org.in/Scripts/TREDSStatisticsView.aspx?TREDSid=52 |
+| S24 | secondary | LiveLaw / SCC Online | MSME Development (Amendment) Act 2026: mandatory TReDS for CPSEs, 90-day mediation, ODR, 50% deposit rule | Aug 2026 | https://www.scconline.com/blog/post/2026/08/04/msme-development-amendment-bill-2026/ |
+| S25 | official | CGTMSE | Cumulative guarantees 1.15 crore worth Rs 9.34 lakh crore; ceiling raised to Rs 10 crore (Apr 2025) | 2025-26 | https://www.cgtmse.in/ |
+| S26 | secondary | IBEF (citing MUDRA) | PMMY FY26: Rs 5.94 lakh crore sanctioned across 4.93 crore loan accounts | FY2025-26 | https://www.ibef.org/government-schemes/pradhan-mantri-mudra-loan-bank-yojana |
+| S27 | official | Ministry of Finance / PIB | 3.96 lakh MSME loan applications, Rs 52,300 crore sanctioned under PSB digital Credit Assessment Model (Apr-Dec 2025) | Apr-Dec 2025 | https://www.pib.gov.in/PressReleasePage.aspx?PRID=2216047&reg=6&lang=1 |
+| S28 | secondary | MediaNama; Sahamati | Unified Lending Interface live with 64 lenders / 136 data services; Account Aggregator network statistics | Jan-Jun 2026 | https://www.medianama.com/2026/01/223-unified-lending-interface-64-lenders-136-data-services/ |
+| S53 | secondary | Taxguru / Business Standard / Busy | Section 43B(h) 45-day rule (Section 37(2)(g) of Income-tax Act 2025 from 1-Apr-2026) and unintended effects | 2024-2026 | https://taxguru.in/income-tax/finance-ministry-clarifies-section-43bh-45-day-msme-payment-rule.html |
+| S29 | industry | TeamLease RegTech | Decoding Compliance for Manufacturing MSMEs in India (1,450+ obligations, Rs 13-17 lakh/yr) | Jun 2025 | https://www.businessworld.in/article/manufacturing-msmes-bear-rs-13-lakh-annual-compliance-burden-report-561596 |
+| S52 | official | PIB / KPMG / Drishti | Four Labour Codes effective 21-Nov-2025; Income-tax Act 2025 in force from 1-Apr-2026 | Nov 2025 / Apr 2026 | https://static.pib.gov.in/WriteReadData/specificdocs/documents/2025/nov/doc20251129711301.pdf |
+| S51 | official | ICAI | ICAI Student & Member Report 2025: 4,07,629 members; 1,59,557 with COP; 98,967 firms | Mar 2025 | https://finance.careers360.com/articles/icai-student-and-member-report-2025 |
+| S30 | industry | India SME Forum (Digishaastra, with Meta) | META Report Card 2025: The State of Digitalisation in Indian MSMEs (7,835 MSMEs) | 2024-25 | https://indiasmeforum.org/digishaastra/assets/docs/Final-META-Report-Card-2025.pdf |
+| S31 | industry | India SME Forum | Digital Procurement Report (27,000+ Udyam MSMEs; Rs 124.9 lakh crore MSME procurement) | Aug 2026 | https://www.business-standard.com/amp/economy/news/india-s-124-9-trn-msme-procurement-mkt-offers-digital-growth-opportunity-126080601637_1.html |
+| S32 | industry | ICRIER | Annual Survey of MSMEs in India 2025: Role of Digitalisation (2,365 Udyam manufacturing MSMEs) | 2025 | https://icrier.org/pdf/Annual-Survey-MSMEs_India_2025.pdf |
+| S33 | industry | Vi Business; Dun & Bradstreet; PwC | MSME AI adoption studies 2026 (1 in 4 integrated AI; 24% none / 35% experimenting / 37% automating / 5% core) | 2026 | https://www.dnb.co.in/files/reports/BEOT-2026-Publication.pdf |
+| S55 | industry | Verisign DNIB; Tucows/NIXI | .IN registry ~4.1-4.2 million domains (end-2024 / May 2025 migration) | 2024-2025 | https://www.tucowsregistry.com/nixi-whitepaper |
+| S56 | secondary | Industry blogs (low confidence) | WhatsApp India user base (~536 million) and WhatsApp Business usage | 2025-2026 | https://hyperleap.ai/blog/whatsapp-statistics-india-2026 |
+| S34 | official | Ministry of Commerce / PIB | GeM: Rs 18.4 lakh crore cumulative GMV; FY26 Rs 5 lakh crore; MSMEs 47% of order value; 11 lakh+ MSEs | FY2025-26 | https://www.pib.gov.in/PressReleasePage.aspx?PRID=2249335&reg=3&lang=1 |
+| S35 | secondary | Government statement via IANS; industry | ONDC: 1.16 lakh retail sellers live (Dec 2025); 3 lakh+ sellers overall (2026) | Dec 2025 / 2026 | https://ianslive.in/over-116-lakh-retail-sellers-now-live-on-ondc-govt--20251216164816 |
+| S36 | official | Ministry of MSME (Parliament replies) via news | Exporting MSMEs 52,849 (FY21) to 1,73,350 (FY25); MSME exports Rs 3.95 to 12.39 lakh crore; share 45.73% (FY24), 45.79% (FY25 to May) | FY2020-21 to FY2024-25 | https://indiaseatradenews.com/exporting-msmes-up-from-52849-in-2020-21-to-173350-in-2024-25-centre/ |
+| S37 | official | Cabinet / PIB | Export Promotion Mission, Rs 25,060 crore (FY26-FY31): Niryat Protsahan and Niryat Disha | Nov 2025 | https://www.pib.gov.in/PressReleseDetailm.aspx?PRID=2189381&reg=3&lang=2 |
+| S38 | secondary | KNN India; GTRI; CleanCarbon | EU CBAM definitive phase from 1-Jan-2026: MSME steel exporters hit; 25-30k indirect and 3-4k direct MSME exporters exposed | 2026 | https://knnindia.co.in/news/newsdetails/msme/indian-steel-msme-exporters-hit-as-eus-cbam-payment-phase-begins |
+| S39 | official | SEBI (via practitioner summaries) | BRSR Core value-chain disclosures: voluntary for top 250 listed cos from FY2025-26, assessment/assurance from FY2026-27 | Mar 2025 circular | https://earth5r.org/brsr-value-chain-disclosure-supplier-esg-data-gap/ |
+| S40 | official | NCAER for DPIIT | Assessment of Logistics Cost in India: 7.97% of GDP (FY24); firms <Rs 5 cr turnover pay 16.9% of output vs 7.6% for >Rs 250 cr | FY2023-24 (Sep 2025) | https://ncaer.org/wp-content/uploads/2025/09/NCAER_Logistic_Study_Report_Sept2025.pdf |
+| S41 | official | BEE / SAMEEEKSHA / literature | MSMEs ~25% of industrial energy use; 10-25% efficiency potential; energy 15-40% of production cost in intensive clusters | various | https://beeindia.gov.in/content/energy-efficiency-smes |
+| S70 | secondary | FIEO / Business Standard | State-wise merchandise exports FY2024-25 (Gujarat $116.3 bn, Maharashtra $65.9 bn, TN $52.1 bn, Karnataka $30.5 bn, UP $22 bn) | FY2024-25 | https://www.business-standard.com/economy/news/gujarat-remains-top-exporting-state-in-fy25-with-9-83-trn-exports-fieo-125080501577_1.html |
+| S42 | secondary | Tata AIA / Riskcovry (citing IRDAI study) - low confidence | ~17% of MSMEs have any insurance; 31% health-insurance penetration in MSMEs vs 85% in large corporates | undated | https://www.riskcovry.com/pulse-under-penetration-of-insurance-in-msme-sector/ |
+| S43 | secondary | BW Businessworld | Nearly 47% of Indian small businesses lost time or money to a cyber incident in the past 12 months (APAC avg 37%) | 2025 | https://www.businessworld.in/article/survey-reveals-nearly-half-of-indian-smes-faced-cyber-incidents-in-2025-608641 |
+| S54 | official | NITI Aayog with Institute for Competitiveness | Enhancing Competitiveness of MSMEs in India | May 2025 | https://www.pib.gov.in/PressReleasePage.aspx?PRID=2126063&reg=48&lang=2 |
+| S44 | company | IndiaMART InterMESH | Q4 & FY26 results: revenue Rs 1,569 crore; collections Rs 1,857 crore; 2,28,000 paying suppliers | FY2025-26 | https://investor.indiamart.com/files/IndiaMART_Q4FY26_Press_Release-v3.pdf |
+| S45 | company | Just Dial | FY26 results: operating revenue Rs 1,213.9 crore; paid campaigns 6,31,530; active listings 54.7 million | FY2025-26 | https://www.investywise.com/just-dial-q4-fy26-financial-results |
+| S46 | secondary | Entrackr / BW Disrupt / ipocentral | OfBusiness FY25 revenue Rs 22,241 cr; Oxyzo FY25 revenue Rs 1,207 cr; Zetwerk FY25 Rs 12,798 cr; Infra.Market FY25 Rs 18,472 cr; Moglix FY24 Rs 4,964 cr | FY2024-25 | https://entrackr.com/fintrackr/inframarket-reports-over-2-bn-gross-revenue-in-fy25-profit-falls-42-10991551 |
+| S47 | secondary | Tracxn / Entrackr / Inc42 / Business Standard | Tally FY25 revenue Rs 500-1,000 cr (range); Zoho FY25 Rs 12,313 cr; Clear FY25 Rs 272 cr; Razorpay FY25 Rs 3,783 cr; OkCredit FY25 Rs 23.3 cr; Khatabook FY24 Rs 102.7 cr; IndiaFilings FY25 Rs 88.5 cr | FY2023-24 to FY2024-25 | https://entrackr.com/fintrackr/clear-reports-rs-272-crore-revenue-and-rs-96-crore-loss-in-fy25-10808038 |
+| S48 | secondary | Accion / company releases | FlexiLoans AUM > Rs 3,000 cr, 70,000+ MSMEs; Lendingkart cumulative Rs 18,700 cr disbursed | 2025-2026 | https://www.accion.org/news/flexiloans-secures-a-further-45mn-to-empower-indian-msmes/ |
+| S49 | secondary | Vendor sites / comparison blogs | WhatsApp BSP pricing (Wati ~Rs 2,499/mo; AiSensy Rs 1,500-3,500/mo; Interakt Rs 2,499-3,499/mo; Gallabox ~Rs 2,399/mo); AiSensy 2,10,000+ businesses | 2026 | https://m.aisensy.com/blog/whatsapp-api-providers/ |
+| S50 | secondary | Skydo / Entrepreneur India / IBS Intelligence | Skydo 40,000+ exporters (May 2026), ~$19.7m raised; Drip Capital Rs 10,000 cr MoU with Maharashtra; BriskPe $5m seed | 2025-2026 | https://fintechobserver.substack.com/p/skydo-indias-cross-border-payments |
+| S57 | secondary | TechCrunch / Bloomberg / Business Wire / Crowdfund Insider (global analogs) | Pennylane (EUR 115m ARR 2025), Agicap ($100m 2021), Katana (EUR 14m Series B ext., 1,500 SMBs), Guidewheel ($9m Series A), MachineMetrics ($20m Series B), Moniepoint ($200m+ Series C; $700m MSME loans 2025), Konfio ($227m credit line), BukuWarung ($80m; 6.5m users), Mekari ($50m), KiotViet ($45m; 150k MSMEs), C2FO (~2 lakh suppliers in India network) | 2021-2026 | https://www.businesswire.com/news/home/20251002273715/en/Katana-Extends-Series-B-with-Cogito-Capital-as-Lead-Joined-by-Benchmarks-Peter-Fenton |
+| S58 | official | Technical Group on Population Projections (via StatisticsTimes) | Projected state population, 2026 | 1-Jul-2026 | https://statisticstimes.com/demographics/india/indian-states-population.php |
+| S59 | official | Ministry of MSME / DPIIT / FMC | MSE-CDP (606 projects approved, 364 completed); ODOP (1,102 products, 761 districts); FMC cluster mapping (~6,600 clusters) | 2010-2026 | https://www.pib.gov.in/PressReleasePage.aspx?PRID=2240160&reg=3&lang=1 |
+| S60 | secondary | NSE / BSE via news | NSE Emerge 731 companies (May 2026); ~580 companies listed on BSE SME | 2026 | https://www.businesstoday.in/amp/markets/ipo-corner/story/nse-emerge-hits-700-sme-listings-milestone-in-2025-508898-2025-12-31 |
+| S61 | company | Haqdarshak | Scheme-access platform covering 6,000+ central and state schemes; bank partnerships for MSME scheme access | 2025-2026 | https://msme.haqdarshak.com/ |
+| S63 | official | SIDBI | Udyam Assist Platform (launched 11-Jan-2023) for informal micro enterprises via designated agencies | 2023 | https://www.sidbi.in/udyam-assist-platform |
+| S66 | secondary | DataRankIndia | District-wise Udyam (URP) registrations: Gujarat, Tamil Nadu, Maharashtra | 2026 (as published by compiler) | https://datarankindia.com/gujarat-msme-statistics/ |
+| S71 | secondary | Inc42 / TechCrunch / ipoplatform (company coverage) | Infinite Uptime ($35m Series C); Altizon (270+ IIoT projects, 130+ enterprises); Indian IIoT pricing ranges | 2023-2026 | https://inc42.com/startups/altizon-iiot-platform-manufacturing-42next/ |
+| S67 | industry | SIDBI (via SMEStreet/YourStory) | About one-fourth of surveyed MSMEs cite lack of skilled manpower as a major challenge | 2025 | https://smestreet.in/msme-opportunities/msmes-and-the-skill-gap-why-hiring-remains-a-top-challenge-9535630 |

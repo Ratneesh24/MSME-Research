@@ -1,0 +1,16 @@
+subsector,nic,count_rank,ability_to_pay_rank,evidence
+"Retail trade (kirana, apparel, mobile, hardware)",47,1,9,Largest share of trading units; thin margins; B2C.
+"Food & beverage services (eateries, dhabas)",56,2,10,High count (Udyam bulletins); low B2B pay capacity.
+Wholesale trade / distribution,46,3,5,Working-capital heavy; receivables-intensive; GST-registered.
+Food products manufacturing,10,4,6,Most numerous manufacturing NIC in Udyam data; PMFME/ODOP focus.
+Textiles & wearing apparel,13-14,5,6,"Large clusters (Tiruppur, Surat, Ludhiana, Bhiwandi); export-linked."
+Transport & logistics services,49-52,6,7,Fleet operators; fuel and receivables pain; ONDC/logistics.
+Repair & personal services,95-96,7,10,"High count, B2C, cash-heavy."
+Fabricated metal products / engineering,"25,28",8,3,"B2B to OEMs; quality, energy and receivables pain."
+Construction & specialised trades,41-43,9,6,Excluded from ASUSE; Udyam includes; project receivables.
+IT & professional services,"62-63,69-74",10,2,Higher margins and SaaS literacy; export services.
+Chemicals & dyes,20,11,2,High GVA per unit; environmental compliance; CBAM-adjacent.
+Pharmaceuticals,21,12,1,Regulated (GMP/Schedule M); quality-system spend; exports.
+Auto components,29-30,13,2,Tier-2/3 suppliers; PPAP/quality; working capital to OEMs.
+Electronics & electrical,26-27,14,2,PLI-linked growth; quality and component procurement.
+"Basic metals (re-rolling, castings, forging)",24,15,3,Energy-intensive; CBAM exposure for EU exporters.

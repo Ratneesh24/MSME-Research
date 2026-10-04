@@ -1,0 +1,12 @@
+bracket,est_low,est_mid,est_high,confidence,basis
+< Rs 10 lakh,54000000,59000000,64000000,Low,"ASUSE 2025 average GVA per establishment is only Rs 2.5 lakh (Rs 19.92 lakh cr / 7.92 cr), and 86.6% of establishments are own-account. Only ~1.49 crore units are normal GST filers against a Rs 20-40 lakh registration threshold, and 36.3% of GST registrants themselves report turnover <= Rs 5 lakh (S13)."
+Rs 10-25 lakh,8000000,11000000,14000000,Low,Residual of the ASUSE universe after the GST-registered upper tail; partly below the GST threshold.
+Rs 25 lakh-1 cr,4500000,6000000,7500000,Low,"GST registrants between Rs 5 lakh and Rs 1.5 cr number ~67-75 lakh (80-85% below Rs 1.5 cr minus 36.3% below Rs 5 lakh, S13); this band is a share of that."
+Rs 1-5 cr,2000000,2500000,3000000,Low-Medium,GST registrants >= Rs 1.5 cr are 15-20% of ~1.53 crore (23-31 lakh) minus ~8.6 lakh >= Rs 5 cr; the Rs 1-1.5 cr band was added.
+Rs 5-10 cr,227719,311216,394713,Medium,"Power-law interpolation (alpha=0.82) between e-invoice anchor (>= Rs 5 cr) and GST slab share >= Rs 500 cr; point estimate 303,625. +/-25-30% for GSTIN vs PAN mismatch."
+Rs 10-25 cr,157109,214716,272322,Medium,"Power-law interpolation (alpha=0.82) between e-invoice anchor (>= Rs 5 cr) and GST slab share >= Rs 500 cr; point estimate 209,479. +/-25-30% for GSTIN vs PAN mismatch."
+Rs 25-50 cr,60800,83093,105386,Medium,"Power-law interpolation (alpha=0.82) between e-invoice anchor (>= Rs 5 cr) and GST slab share >= Rs 500 cr; point estimate 81,066. +/-25-30% for GSTIN vs PAN mismatch."
+Rs 50-100 cr,34428,47052,59675,Medium,"Power-law interpolation (alpha=0.82) between e-invoice anchor (>= Rs 5 cr) and GST slab share >= Rs 500 cr; point estimate 45,904. +/-25-30% for GSTIN vs PAN mismatch."
+Rs 100-250 cr,23753,32462,41171,Medium,"Power-law interpolation (alpha=0.82) between e-invoice anchor (>= Rs 5 cr) and GST slab share >= Rs 500 cr; point estimate 31,670. +/-25-30% for GSTIN vs PAN mismatch."
+Rs 250-500 cr,9192,12562,15933,Medium,"Power-law interpolation (alpha=0.82) between e-invoice anchor (>= Rs 5 cr) and GST slab share >= Rs 500 cr; point estimate 12,256. +/-25-30% for GSTIN vs PAN mismatch."
+Rs 500 cr+ (not MSME),15000,16000,17000,Medium,0.10% of active GST taxpayers (S13); they pay 50.3% of GST cash.

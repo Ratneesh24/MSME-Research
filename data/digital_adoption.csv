@@ -1,0 +1,17 @@
+indicator,value_pct,universe,ref,source_ids,confidence,notes
+Establishments using internet for business,39.4,ASUSE 2025 (7.92 cr unincorporated),2025,S01,High,26.7% in ASUSE 2023-24.
+Maintain account with a financial institution,82.5,ASUSE 2025,2025,S01,High,76.1% in ASUSE 2023-24.
+Registered under any Act/authority,37.5,ASUSE 2025,2025,S01,High,37.2% previously; i.e. ~62% fully informal.
+Used computers for business: hired-worker establishments,23.6,ASUSE (earlier round),2023-24,S01,Medium,3% for own-account establishments.
+Adopted at least one digital tool,53.8,"ISF survey, 7,835 MSMEs (registered-skewed)",2024-25,S30,Medium,46.2% fully offline.
+Unaware of any government digitalisation scheme,97.3,ISF survey,2024-25,S30,Medium,
+Find it difficult to find the right digital tools,52.6,ISF survey,2024-25,S30,Medium,
+Accept digital payments,90,"SIDBI-Crisil, 2,097 MSMEs",2025,S17,Medium,
+Used digital lending platforms,18,SIDBI-Crisil,2025,S17,Medium,
+Rely on traditional marketing,70,SIDBI-Crisil,2025,S17,Medium,
+Actively use digital marketing or e-commerce,13,ISF/SIDBI coverage,2025,S30;S17,Medium,
+Have a website or web page,19,Survey cited in ICRIER/ISF materials (registered MSMEs),2024-25,S32;S30,Low,A 2026 secondary source claims 35%; unverified.
+Share of procurement spend via digital channels,35,"ISF, 27,000+ Udyam MSMEs",2026,S31,Medium,Reported 30-40%.
+Integrated AI tools into operations,25,Vi Business study,2026,S33,Low,"D&B: 24% none, 35% experimenting, 37% automating tasks, 5% AI core."
+Lost time/money to a cyber incident in last 12 months,47,Small businesses survey,2025,S43,Low-Medium,APAC average 37%.
+Have any insurance,17,IRDAI-cited study,undated,S42,Low,

@@ -1,0 +1,4 @@
+method,steps,est_low,est_high,confidence,key_assumptions
+A. Domain supply side,.IN ~4.2m domains (S55); assume .IN is 35-50% of Indian-registrant domains -> 8.4-12m; assume 30-40% host an active business site -> 2.5-4.8m; MSME share 85-90%,2100000,4300000,Low,.IN share of Indian registrations; active-site share; MSME share
+B. Survey side,19% of surveyed (registered-skewed) MSMEs report a website (S32/S30); apply to 1.06 cr hired-worker establishments (20 lakh) and to 1.49 cr GST normal filers (28 lakh),2000000,2800000,Low-Medium,Survey sample representative of GST-registered MSMEs
+Triangulated,Overlap of A and B,2000000,3500000,Low-Medium,~2.5-4.5% of 8 crore establishments; ~15-25% of GST-registered MSMEs

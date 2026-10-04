@@ -1,0 +1,37 @@
+state,region,udyam_urp,udyam_urp_uap_total,total_source,udyam_reported_employment_fy26_lakh,nss73_msme_lakh_2015_16,asuse_2023_24_establishments_lakh,population_2026_crore,merchandise_exports_fy25_usd_bn,urp_per_lakh_pop,total_per_lakh_pop,urp_to_survey_base_ratio,survey_base_used,notes
+Maharashtra,West,7336363,10144478,S04 (28-Feb-2026),67.97,47.78,60.97,12.96,65.9,5661,7828,1.2,ASUSE 2023-24,Largest by Udyam registrations; Pune alone ~15% of state URP (S66).
+Uttar Pradesh,North,4977996,8603272,S04 (28-Feb-2026),118.0,89.99,93.83,24.35,22.0,2044,3533,0.53,ASUSE 2023-24,Largest by ASUSE establishments and workers; leads FY26 Udyam reported employment.
+Tamil Nadu,South,4155776,6240000,secondary 2026 (verify),61.47,49.48,,7.9,52.1,5260,7899,0.84,NSS 2015-16,URP+UAP figure (~62.4 lakh) is from a secondary 2026 source; verify. TN tops ASI factory count (S16).
+Rajasthan,North,3157377,4446338,S04 (28-Feb-2026),,26.87,,8.39,,3763,5300,1.18,NSS 2015-16,
+Gujarat,West,3028267,4369973,S04 (28-Feb-2026),,33.16,,7.43,116.3,4076,5882,0.91,NSS 2015-16,"Largest exporter state (26.6% of FY25 merchandise exports, S70)."
+Karnataka,South,2605682,4991314,S04 (28-Feb-2026),50.87,38.34,,7.08,30.5,3680,7050,0.68,NSS 2015-16,
+Madhya Pradesh,Central,2403832,4827725,S04 (28-Feb-2026),,26.74,,9.0,,2671,5364,0.9,NSS 2015-16,
+West Bengal,East,2175295,5310326,S04 (28-Feb-2026),,88.67,92.68,10.06,,2162,5279,0.23,ASUSE 2023-24,Second-largest informal base (ASUSE) but low Udyam URP: largest formalisation gap among big states.
+Andhra Pradesh,South,2084658,3928602,S04 (28-Feb-2026),36.66,33.87,,5.37,,3882,7316,0.62,NSS 2015-16,
+Bihar,East,2031067,4273285,S04 (28-Feb-2026),55.54,34.46,,13.29,,1528,3215,0.59,NSS 2015-16,
+Telangana,South,1879803,4917109,secondary 2026 (verify),60.56,,,3.87,,4857,12706,,,URP+UAP 49.17 lakh reported with a URP component (24.2 lakh) that conflicts with the URP column (18.8 lakh); the sources likely differ in date. Verify on dashboard.msme.gov.in.
+Punjab,North,1623386,2562060,secondary 2026 (verify),,,,3.14,,5170,8159,,,URP+UAP from secondary report; date unclear.
+Haryana,North,1424265,2621059,secondary 2026 (verify),,,,3.14,,4536,8347,,,URP+UAP from secondary report; date unclear.
+Odisha,East,1411434,3101315,secondary 2026 (verify),,,,4.75,,2971,6529,,,URP+UAP from secondary report; date unclear.
+Kerala,South,1104301,1842567,S04 (28-Feb-2026),,,,3.62,,3051,5090,,,
+Jharkhand,East,,,,,,,4.11,,,,,,
+Assam,North-East,,,,,,,3.6,,,,,,
+Chhattisgarh,Central,,,,,,,2.89,,,,,,
+Delhi,North,,,,,,,,,,,,,
+Uttarakhand,North,,,,,,,,,,,,,
+Himachal Pradesh,North,,,,,,,,,,,,,
+Jammu & Kashmir,North,,964000,secondary 2026 (verify),,,,,,,,,,"~9.64 lakh registrations since 2020 (Kashmir Life, 2026); URP/UAP split unknown."
+Goa,West,,,,,,,,,,,,,
+Tripura,North-East,,,,,,,,,,,,,
+Meghalaya,North-East,,,,,,,,,,,,,
+Manipur,North-East,,,,,,,,,,,,,
+Nagaland,North-East,,,,,,,,,,,,,
+Arunachal Pradesh,North-East,,,,,,,,,,,,,
+Mizoram,North-East,,,,,,,,,,,,,
+Sikkim,North-East,,,,,,,,,,,,,
+Puducherry,South,,,,,,,,,,,,,
+Chandigarh,North,,,,,,,,,,,,,
+Dadra & Nagar Haveli and Daman & Diu,West,,,,,,,,,,,,,
+Ladakh,North,,,,,,,,,,,,,
+Andaman & Nicobar Islands,East,,,,,,,,,,,,,
+Lakshadweep,South,,,,,,,,,,,,,

@@ -1,0 +1,7 @@
+level,definition,est_low,est_high,basis,confidence
+L0 Offline,No internet use for business; cash/UPI on personal phone at most,46000000,49000000,(1-39.4%) x 7.92 cr ASUSE + few incorporated,Medium
+L1 WhatsApp + digital payments,"Business WhatsApp/UPI QR, no accounting software",22000000,26000000,Internet users (3.12 cr) minus L2+,Low-Medium
+L2 Accounting/GST software,Billing/accounting app or Tally used in-house,5000000,8000000,Vendor user claims with overlap haircut; GST normal filers 1.49 cr as ceiling,Low
+L3 Multiple SaaS tools,Billing + CRM/WhatsApp API/HR/e-commerce/paid lead platforms,1000000,2000000,IndiaMART 2.28 lakh payers; Justdial 6.3 lakh campaigns; AiSensy 2.1 lakh accounts; 8.56 lakh e-invoice GSTINs,Low
+L4 Integrated ERP,"ERP integrating finance, inventory, production, sales",100000,250000,Medium (37k) + upper-small Udyam units; ASI factories 2.67 lakh as ceiling,Low
+L5 AI/data-driven,AI or analytics core to operations,10000,30000,~5% 'AI core' in D&B sample applied to L3-L4 base with downward bias correction,Very low
